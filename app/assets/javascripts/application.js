@@ -12,5 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+ require active_resource
 //= require turbolinks
+//= require modals
 //= require_tree .
+ require checkout
