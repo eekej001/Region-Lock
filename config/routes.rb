@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  
+  match ':controller(/:action(/:id))', :via => [:get, :post]
   root :to => 'home#index'
   mount ShopifyApp::Engine, at: '/'
   # The priority is based upon order of creation: first created -> highest priority.
