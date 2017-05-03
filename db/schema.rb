@@ -14,8 +14,10 @@
 ActiveRecord::Schema.define(version: 20170503213735) do
 
   create_table "forms", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "first_name", limit: 25
+    t.string   "last_name",  limit: 50
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "shops", force: :cascade do |t|
