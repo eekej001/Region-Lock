@@ -9,6 +9,17 @@
 # And be sure to use new-style password hashing:
 #   http://dev.mysql.com/doc/refman/5.0/en/old-client.html
 #
+
+#default: &default
+#  adapter: mysql2
+#  encoding: utf8
+#  pool: 5
+#  username: impslcmuvpetcr
+#  password: ryc3bxn_j7HpG0ejV_1gDXS0-x
+#  host: ec2-54-235-250-156.compute-1.amazonaws.com
+
+
+
 default: &default
   adapter: mysql2
   encoding: utf8
@@ -16,6 +27,8 @@ default: &default
   username: root
   password: rubyroot
   host: localhost
+
+
 
 development:
   <<: *default
@@ -47,8 +60,15 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
+#production:
+#  <<: *default
+#  database: projectH_production
+#  username: projectH
+#  password: <%= ENV['PROJECTH_DATABASE_PASSWORD'] %>
+
+
 production:
   <<: *default
-  database: projectH_production
-  username: projectH
-  password: <%= ENV['PROJECTH_DATABASE_PASSWORD'] %>
+  database: dbvgl86qn62nnd
+  username: impslcmuvpetcr
+  password: ryc3bxn_j7HpG0ejV_1gDXS0-x
