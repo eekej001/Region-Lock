@@ -8,6 +8,20 @@ class HomeController < ShopifyApp::AuthenticatedController
   	end
   end
 
+
+  def create
+    @form = Form.new(form_params)
+    if @form.save
+      flash[:notice] = "Form saved successfully."
+      redirect_to(:action => 'index')
+    else
+      flash[:notice] = "Form save unsuccessful."   
+    end  
+    #redirect_to(:action => 'index') 
+  end
+
+
+
   def proxy
     redirect_to "https://www.emanga.com"
   end 	
