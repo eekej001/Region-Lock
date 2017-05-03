@@ -15,7 +15,8 @@ class HomeController < ShopifyApp::AuthenticatedController
       flash[:notice] = "Form saved successfully."
       redirect_to(:action => 'index')
     else
-      flash[:notice] = "Form save unsuccessful."   
+      flash[:notice] = "Form save unsuccessful."
+      redirect_to(:action => 'index')   
     end  
     #redirect_to(:action => 'index') 
   end
