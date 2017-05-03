@@ -70,5 +70,6 @@ test:
 production:
   <<: *default
   database: dbvgl86qn62nnd
+  url: postgres://impslcmuvpetcr:ryc3bxn_j7HpG0ejV_1gDXS0-x@ec2-54-235-250-156.compute-1.amazonaws.com:5432/dbvgl86qn62nnd
   username: impslcmuvpetcr
   password: ryc3bxn_j7HpG0ejV_1gDXS0-x
