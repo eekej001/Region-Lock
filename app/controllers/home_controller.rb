@@ -1,11 +1,11 @@
 class HomeController < ShopifyApp::AuthenticatedController
   def index
 
-  	if params[:id]
-    	redirect_to "https://www.emanga.com"
-    else	
+  	#if params[:id]
+    #	redirect_to "https://www.emanga.com"
+   # else	
    		 @products = ShopifyAPI::Product.find(:all, params: { limit: 10 })
-  	end
+  #	end
   end
 
 
@@ -29,3 +29,10 @@ class HomeController < ShopifyApp::AuthenticatedController
 
 
 end
+
+
+private
+
+    def form_params
+      params.require(:form).permit(:first_name, :last_name)
+    end
