@@ -11,7 +11,8 @@ gem 'shopify_cli'
 # Use mysql as the database for Active Record
 
 group :production do
-  gem 'pg'
+  #gem 'pg'
+  gem 'mysql2', '>= 0.3.13', '< 0.5'
 end
 
 group :development do
