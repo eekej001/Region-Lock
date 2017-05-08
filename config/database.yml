@@ -68,11 +68,11 @@ test:
 
 
 production:
-  #<<: *default
-  adapter: postgresql
-  encoding: unicode
-  pool: 5
-  database: dbvgl86qn62nnd
-  url: postgres://impslcmuvpetcr:ryc3bxn_j7HpG0ejV_1gDXS0-x@ec2-54-235-250-156.compute-1.amazonaws.com:5432/dbvgl86qn62nnd
-  username: impslcmuvpetcr
-  password: ryc3bxn_j7HpG0ejV_1gDXS0-x
+  <<: *default
+  #adapter: postgresql
+  #encoding: unicode
+  #pool: 5
+  database: sql3172946
+  url: postgresql://sql3172946:tMgirN8ney@sql3.freemysqlhosting.net:3306/sql3172946
+  username: sql3172946
+  password: tMgirN8ney
