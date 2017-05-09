@@ -1,4 +1,5 @@
 class HomeController < ShopifyApp::AuthenticatedController
+  skip_before_action :verify_authenticity_token
   def index
 
   	#if params[:id]
@@ -24,15 +25,7 @@ class HomeController < ShopifyApp::AuthenticatedController
 
 
   def proxy
-    #redirect_to "https://www.emanga.com"
-    @form = Form.new(form_params)
-    if @form.save
-      flash[:notice] = "Form saved successfully."
-      redirect_to(:action => 'index')
-    else
-      flash[:notice] = "Form save unsuccessful."
-      redirect_to(:action => 'index')   
-    end
+    redirect_to "https://www.emanga.com"
   end 	
 
 
