@@ -1,4 +1,4 @@
-class HomeController < ShopifyApp::AuthenticatedController
+class HomeController
   skip_before_action :verify_authenticity_token
   def index
 
