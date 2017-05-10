@@ -25,11 +25,8 @@ class ProxyController < ApplicationController
 
 
   def proxy
-    redirect_to "https://www.emanga.com"
-  end 	
-
-
-end
+    redirect_to(:action => 'index')
+  end
 
 
 private

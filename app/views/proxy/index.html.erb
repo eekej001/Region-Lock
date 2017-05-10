@@ -1,23 +1,4 @@
-<% content_for :javascript do %>
-  <script type="text/javascript">
-    ShopifyApp.ready(function(){
-      ShopifyApp.Bar.initialize({
-        title: "Home",
-        icon: "<%= asset_path('favicon.ico') %>"
-      });
-    });
-  </script>
-<% end %>
-
 <h1>Proxy Time</h1>
-<h2>First 10 Products</h2>
-
-<ul>
-  <% @products.each do |product| %>
-    <li><%= link_to product.title, "https://#{@shop_session.url}/admin/products/#{product.id}", target: "_top" %></li>
-  <% end %>
-</ul>
-
 
 <div>
   <%= form_for(:form, :url => {:action => 'create'}) do |f| %>
