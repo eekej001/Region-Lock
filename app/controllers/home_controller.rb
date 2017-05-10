@@ -6,7 +6,7 @@ class HomeController < ShopifyApp::AuthenticatedController
     #	redirect_to "https://www.emanga.com"
    # else	
    		 @products = ShopifyAPI::Product.find(:all, params: { limit: 10 })
-       @users = Form.find(:all)
+       @users = Form.all
   #	end
   end
 
