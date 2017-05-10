@@ -26,7 +26,10 @@ class ProxyController < ApplicationController
 
   def proxy
     redirect_to(:action => 'index')
-  end
+  end 	
+
+
+end
 
 
 private
