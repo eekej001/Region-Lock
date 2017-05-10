@@ -17,6 +17,14 @@
     <li><%= link_to product.title, "https://#{@shop_session.url}/admin/products/#{product.id}", target: "_top" %></li>
   <% end %>
 </ul>
+</br>
+</br>
+
+<ul>
+  <% @users.each do |user| %>
+    <li><%= user.first_name %> <%= user.last_name %></li>
+  <% end %>
+</ul>
 
 
 <div>
