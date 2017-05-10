@@ -25,7 +25,7 @@ class ProxyController < ApplicationController
 
 
   def proxy
-    redirect_to(:action => 'index')
+    redirect_to "https://www.projecthentai.com"
   end 	
 
 
