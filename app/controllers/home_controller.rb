@@ -25,7 +25,7 @@ class HomeController < ShopifyApp::AuthenticatedController
       redirect_to(:action => 'index')   
     end  
     #redirect_to(:action => 'index') 
-  #end
+  end
 
 
 
