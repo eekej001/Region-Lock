@@ -29,7 +29,7 @@ class ProxyController < ApplicationController
      #@filename = "#{Rails.root}/public/signup.html"
      #send_file @filename, :type => 'text/html', :x_sendfile=> true
      filename = File.join(Rails.root, "/public/signup.html")
-     send_file(filename, :filename => "signup.html", :type => 'text/html')
+     send_file(filename, :filename => "signup.html", :type => 'text/html', :disposition => "inline")
      #send_file(@filename, :type => 'application/liquid; charset=utf-8')
   end	
 
