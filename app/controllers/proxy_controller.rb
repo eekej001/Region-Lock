@@ -28,6 +28,7 @@ class ProxyController < ApplicationController
      #write code to send public html file with content-type: application/liquid
      #@filename = "#{Rails.root}/public/signup.html"
      #send_file @filename, :type => 'text/html', :x_sendfile=> true
+     render :layout => false, :content_type => 'application/liquid' if Rails.env.production?
      filename = File.join(Rails.root, "/public/signup.html")
      send_file(filename, :filename => "signup.html", :type => 'text/html', :disposition => "inline")
      #send_file(@filename, :type => 'application/liquid; charset=utf-8')
