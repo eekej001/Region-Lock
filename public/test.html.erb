@@ -1,0 +1,18 @@
+<div>
+  <%= form_for(:form, :url => {:action => 'create'}) do |f| %>
+  <table>
+    <tr>
+      <td><%= f.label(:firstname, "First Name") %></td>
+      <td><%= f.text_field(:first_name) %></td>
+    </tr>
+    <tr>
+      <td><%= f.label(:lastname, "Last Name") %></td>
+      <td><%= f.text_field(:last_name) %></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td><%= submit_tag("Submit") %></td>
+    </tr>
+  </table>
+  <% end %>
+</div> 
