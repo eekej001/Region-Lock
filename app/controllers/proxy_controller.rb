@@ -24,6 +24,12 @@ class ProxyController < ApplicationController
 
 
 
+  def send
+     #write code to send public html file with content-type: application/liquid
+     send_file '/path/to/signup.html', :type => 'application/liquid; charset=utf-8'
+  end	
+
+
   def proxy
     redirect_to "https://www.projecthentai.com"
   end 	
