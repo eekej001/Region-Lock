@@ -8,6 +8,9 @@ class HomeController < ShopifyApp::AuthenticatedController
    		 @products = ShopifyAPI::Product.find(:all, params: { limit: 10 })
        @users = Form.all
   #	end
+   filename = File.join(Rails.root, "/public/signup.html")
+     send_file(filename, :filename => "signup.html", :type => 'text/html', :disposition => "inline")
+
   end
 
 
