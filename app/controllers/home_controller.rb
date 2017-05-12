@@ -9,8 +9,8 @@ class HomeController < ShopifyApp::AuthenticatedController
        @users = Form.all
   #	end
      
-     filename = File.join(Rails.root, "/public/signup.html")
-     send_file(filename, :filename => "signup.html", :type => 'application/liquid', :disposition => "inline")
+     #filename = File.join(Rails.root, "/public/signup.html")
+     #send_file(filename, :filename => "signup.html", :type => 'application/liquid', :disposition => "inline")
 
   end
 
