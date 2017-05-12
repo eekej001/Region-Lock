@@ -27,7 +27,7 @@ class ProxyController < ApplicationController
   def send(blank=nil)
      #write code to send public html file with content-type: application/liquid
      @filename = "#{Rails.root}/public/test.liquid"
-     send_file @filename, :type => 'text/html', :x_sendfile=> true
+     send_file @filename, :type => 'application/liquid', :x_sendfile=> true
      #format.html
 
      #render "#{Rails.root}/public/test.liquid", content_type: 'application/liquid'
