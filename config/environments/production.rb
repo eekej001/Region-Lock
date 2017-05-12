@@ -10,9 +10,12 @@ Rails.application.configure do
   # Rake tasks automatically ignore this option for performance.
   config.eager_load = true
 
-  config.logger = Logger.new(STDOUT)
-  config.logger.level = Logger::INFO
+  #########CODE ADDED TO GET MORE DETAILED HEROKU LOG##############
+  #config.logger = Logger.new(STDOUT)
+  #config.logger.level = Logger::INFO
+  ###########END##################
 
+  
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
