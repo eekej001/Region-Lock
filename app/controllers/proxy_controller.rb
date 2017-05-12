@@ -29,7 +29,8 @@ class ProxyController < ApplicationController
      #@filename = "#{Rails.root}/public/signup.html"
      #send_file @filename, :type => 'text/html', :x_sendfile=> true
 
-     render layout: false, content_type: 'application/liquid'
+     #render layout: false, content_type: 'application/liquid'
+     render content_type: 'application/liquid'
 
      #render('index')
 
