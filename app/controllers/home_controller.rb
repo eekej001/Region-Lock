@@ -30,7 +30,7 @@ class HomeController < ShopifyApp::AuthenticatedController
       if @form2.save
         flash[:notice]= "The second form saved"
       else
-         flash[:notice] - "It did not save"
+         flash[:notice] = "It did not save"
       end  
 
 
