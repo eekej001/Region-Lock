@@ -26,6 +26,8 @@ class HomeController < ShopifyApp::AuthenticatedController
    # end  
 #####    #redirect_to(:action => 'index') 
 
+
+=begin
     @form2 = Form.new(:first_name => "DoesIt", :last_name => "Work")
       if @form2.save
         flash[:notice]= "The second form saved"
@@ -34,6 +36,12 @@ class HomeController < ShopifyApp::AuthenticatedController
          flash[:notice] = "It did not save"
          redirect_to(:action => 'index')
       end  
+=end
+
+     Form.create(:first_name => "No", :last_name => "Ifs")
+     flash[:notice] = "No ifs ands or buts about it"
+     redirect_to(:action => 'index')
+
 
 
 
