@@ -29,8 +29,10 @@ class HomeController < ShopifyApp::AuthenticatedController
     @form2 = Form.new(:first_name => "DoesIt", :last_name => "Work")
       if @form2.save
         flash[:notice]= "The second form saved"
+        redirect_to(:action => 'index')
       else
          flash[:notice] = "It did not save"
+         redirect_to(:action => 'index')
       end  
 
 
