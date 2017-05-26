@@ -50,8 +50,8 @@ class ProxyController < ApplicationController
 
   def webhook
   	webhook_json = JSON.parse request.body.read
-  	@fn = webhook_json["first_name"]
-  	@ln = webhook_json["last_name"]
+  	@fn = webhook_json["billing_address"][0]["first_name"]
+  	@ln = webhook_json["billing_address"][0]["last_name"]
 
 
   	Form.create(:first_name => "#{fn}", :last_name => "#{ln}")
