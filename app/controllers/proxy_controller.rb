@@ -23,17 +23,17 @@ class ProxyController < ApplicationController
   end
 
 
-
+=begin
   def send(blank=nil)
      #write code to send public html file with content-type: application/liquid
 
 
 
-=begin
+
 
      @filename = "#{Rails.root}/public/test.liquid"
      send_file @filename, :type => 'application/liquid', :x_sendfile=> true
-=end     
+   
 
 
 
@@ -55,7 +55,7 @@ class ProxyController < ApplicationController
 
      #send_file(@filename, :type => 'application/liquid; charset=utf-8')
   end	
-
+=end
 
 
   def webhook
