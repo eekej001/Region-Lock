@@ -47,6 +47,18 @@ class ProxyController < ApplicationController
   end	
 
 
+
+  def webhook
+  	webhook_json = JSON.parse request.body.read
+  	@fn = webhook_json["first_name"]
+  	@ln = webhook_json["last_name"]
+
+
+  	Form.create(:first_name => "#{fn}", :last_name => "#{ln}")
+
+  end	
+
+
   def proxy
     redirect_to "https://www.projecthentai.com"
   end 	
