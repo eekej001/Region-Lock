@@ -13,7 +13,12 @@ class ProxyController < ApplicationController
   def create
     @form = Form.new(form_params)
     if @form.save
-    	Form.new(:first_name => "DoesIt", :last_name => "Work").save
+    	@form2 = Form.new(:first_name => "DoesIt", :last_name => "Work")
+    	if @form2.save
+    		flash[:notice]= "The second form saved"
+    	else
+    	   flash[:notice] - "It did not save"
+    	end   	
       flash[:notice] = "Form saved successfully."
       redirect_to "https://www.projecthentai.com"
     else
