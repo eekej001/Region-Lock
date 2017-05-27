@@ -62,7 +62,9 @@ class ProxyController < ApplicationController
   	require 'json'
   	#webhook_json = JSON.parse request.body.read
   	#fn = JSON.parse(params[:billing_address][:first_name])
-  	ln = JSON.parse(params[:billing_address][:last_name])
+  	#ln = JSON.parse(params[:billing_address][:last_name])
+  	fn = "Hi"
+  	ln = "There"
   	#@fn = webhook_json["billing_address"][0]["first_name"]
   	#@ln = webhook_json["billing_address"][0]["last_name"]
 
