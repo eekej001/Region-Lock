@@ -15,7 +15,7 @@ This is the proxy page for {{ shop.name }}.
 List of products in the store:
 {% for product in collections['vanilla'].products %} 
    {% if product.title contains 'Sister' %}
-     - {{ product.title }}<br>
+     - {{ product.title }}
    {% endif %}   
 {% endfor %}
 
