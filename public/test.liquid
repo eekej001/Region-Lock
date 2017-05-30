@@ -8,20 +8,23 @@ This is the proxy page for {{ shop.name }}.
 
 <div id='custE' style='display:none'>{{ customer.email }}</div>
 <script type='text/javascript'>
-  alert('How do you do?');
+  //alert('How do you do?');
 </script>
+
+</pre>
 
 {{ shop.name }} has {{ shop.products_count }} {{ shop.products_count | pluralize: 'product', 'products' }}.
 List of products in the store:
 {% for product in collections['vanilla'].products %} 
    {% if product.title contains 'Sister' %}
-     - {{ product.title }}
+     - {{ product.title }}<br>
    {% endif %}   
 {% endfor %}
 
 {% else %}
+<pre>
    Please login to access your streaming purchases.
+   
 {% endif %}
-
-
 </pre>
+
