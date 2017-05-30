@@ -1,20 +1,17 @@
-
-<pre>
-
 {% if customer %}
-This customer is logged in.
+This customer is logged in. </br></br>
 
-This is the proxy page for {{ shop.name }}.
+This is the proxy page for {{ shop.name }}. </br></br>
 
 <div id='custE' style='display:none'>{{ customer.email }}</div>
 <script type='text/javascript'>
   //alert('How do you do?');
 </script>
 
-</pre>
 
-{{ shop.name }} has {{ shop.products_count }} {{ shop.products_count | pluralize: 'product', 'products' }}. </br>
-List of products in the store: </br>
+
+{{ shop.name }} has {{ shop.products_count }} {{ shop.products_count | pluralize: 'product', 'products' }}. </br></br>
+List of products in the store: </br></br></br>
 {% for product in collections['vanilla'].products %} 
    {% if product.title contains 'Sister' %}
      - {{ product.title }}</br>
@@ -22,9 +19,9 @@ List of products in the store: </br>
 {% endfor %}
 
 {% else %}
-<pre>
+</br></br>
    Please login to access your streaming purchases.
 
 {% endif %}
-</pre>
+
 
