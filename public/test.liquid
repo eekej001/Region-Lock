@@ -1,5 +1,5 @@
 
-<pre>
+
 
 {% if customer %}
 This customer is logged in.
@@ -8,7 +8,7 @@ This is the proxy page for {{ shop.name }}.
 
 <div id='custE' style='display:none'>{{ customer.email }}</div>
 <script type='text/javascript'>
-  alert('How do you do?'')
+  alert('How do you do?');
 </script>
 
 {{ shop.name }} has {{ shop.products_count }} {{ shop.products_count | pluralize: 'product', 'products' }}.
@@ -16,8 +16,7 @@ List of products in the store:
 {% for product in collections['vanilla'].products %} 
    {% if product.title contains 'Sister' %}
      - {{ product.title }}<br>
-   {% endif %}
-   
+   {% endif %}   
 {% endfor %}
 
 {% else %}
@@ -25,4 +24,3 @@ List of products in the store:
 {% endif %}
 
 
-</pre>
