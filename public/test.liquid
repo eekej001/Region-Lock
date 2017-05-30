@@ -13,18 +13,18 @@ This is the proxy page for {{ shop.name }}.
 
 </pre>
 
-{{ shop.name }} has {{ shop.products_count }} {{ shop.products_count | pluralize: 'product', 'products' }}.
-List of products in the store:
+{{ shop.name }} has {{ shop.products_count }} {{ shop.products_count | pluralize: 'product', 'products' }}. </br>
+List of products in the store: </br>
 {% for product in collections['vanilla'].products %} 
    {% if product.title contains 'Sister' %}
-     - {{ product.title }}<br>
+     - {{ product.title }}</br>
    {% endif %}   
 {% endfor %}
 
 {% else %}
 <pre>
    Please login to access your streaming purchases.
-   
+
 {% endif %}
 </pre>
 
