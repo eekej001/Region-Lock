@@ -25,9 +25,9 @@ class ProxyController < ApplicationController
 
 
   def query
-    fname = params[:username]
-    matchup = Form.where(:first_name => '#{fname}']).first 
-    redirect_to(:action => 'index') 
+   # fname = params[:username]
+   # matchup = Form.where(:first_name => '#{fname}']).first 
+   # redirect_to(:action => 'index') 
 
 =begin
    respond_to do |format|
