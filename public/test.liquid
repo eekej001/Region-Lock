@@ -19,6 +19,8 @@ This is the proxy page for {{ shop.name }}. </br>
           url: 'https://region-lock.herokuapp.com/proxy/query', 
           data: formData, 
           dataType: 'json',
+          processData: false,
+		  contentType: false,
           encode: true
         }).done(function(data){ 
            //var purchases = data.purchases;
