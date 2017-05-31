@@ -7,8 +7,8 @@ This is the proxy page for {{ shop.name }}. </br>
 
 <div id='custE' style='display:none'>{{ customer.email }}</div>
 <script type='text/javascript'>
-  $(document).ready(function () {
-    
+  $(document).ready(function() {
+    alert('This is the beginning');
     var formData = {'username': $('input[name=UserName]').val()};
       // process the form
       $.ajax({
@@ -55,7 +55,7 @@ List of products in the store: </br></br>
 
 <style>
    .appContent {
-     margin-left: 5%;
+     margin-left: 25%;
    }
 
 </style>   
