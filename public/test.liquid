@@ -1,17 +1,39 @@
+<div id="appContent">
 {% if customer %}
+</br></br>
 This customer is logged in. </br></br>
 
-This is the proxy page for {{ shop.name }}. </br></br>
+This is the proxy page for {{ shop.name }}. </br>
 
 <div id='custE' style='display:none'>{{ customer.email }}</div>
 <script type='text/javascript'>
-  //alert('How do you do?');
+  $(document).ready(function () {
+    
+    var formData = {'username': $('input[name=UserName]').val()};
+      // process the form
+      $.ajax({
+          type: 'POST', // define the type of HTTP verb we want to use (POST for our form)
+          url: 'https://region-lock.herokuapp.com/proxy/query', // the url where we want to POST
+          data: formData, // our data object
+          dataType: 'json', // what type of data do we expect back from the server
+          encode: true
+        }).done(function(data){ //any name you put in as an argument here will be the json response string.
+           //var purchases = data.purchases;
+
+
+      }).error(function(errorData){
+
+      	document.getElementById("responseContainer").innerHTML = 'Something went wrong. Don't worry, we're working on it!';
+
+        //Something went wrong with the ajax call. It'll be dealt with here
+      });
+  });
 </script>
 
 
 
 {{ shop.name }} has {{ shop.products_count }} {{ shop.products_count | pluralize: 'product', 'products' }}. </br></br>
-List of products in the store: </br></br></br>
+List of products in the store: </br></br>
 {% for product in collections['vanilla'].products %} 
    {% if product.title contains 'Sister' %}
      - {{ product.title }}</br>
@@ -23,5 +45,17 @@ List of products in the store: </br></br></br>
    Please login to access your streaming purchases.
 
 {% endif %}
+
+
+<div id='responseContainer'></div>
+
+</div>
+
+<style>
+   .appContent {
+     margin-left: 5%;
+   }
+
+</style>   
 
 
