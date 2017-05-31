@@ -27,14 +27,14 @@ class ProxyController < ApplicationController
   def query
     fname = params[:username]
     matchup = Form.where(:first_name => '#{fname}']).first 
-    
+    redirect_to(:action => 'index') 
 
-
+=begin
    respond_to do |format|
      format.html
      format.json { render :json => matchup }
    end
-
+=end
 
 =begin
     if request.xhr?
