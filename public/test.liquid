@@ -19,9 +19,11 @@ This is the proxy page for {{ shop.name }}. </br>
           encode: true
         }).done(function(data){ //any name you put in as an argument here will be the json response string.
            //var purchases = data.purchases;
+           alert('Ajax worked');
 
 
       }).error(function(errorData){
+         alert('It didn't work');
 
       	document.getElementById("responseContainer").innerHTML = 'Something went wrong. Don't worry, we're working on it!';
 
