@@ -23,6 +23,16 @@ class ProxyController < ApplicationController
   end
 
 
+
+  def query
+    fname = params[:username]
+    matchup = Form.where(:first_name => '#{fname}']).first 
+    if request.xhr?
+        render :json => { matchup }
+     end
+  end
+
+
 =begin
   def send(blank=nil)
      #write code to send public html file with content-type: application/liquid

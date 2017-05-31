@@ -7,10 +7,11 @@ This is the proxy page for {{ shop.name }}. </br>
 
 <div id='custE' style='display:none'>{{ customer.email }}</div>
 <script type='text/javascript'>
-    alert('This is before the jQuery');
+   // alert('This is before the jQuery');
     $(document).ready(function() {
-    alert('This is the beginning');
-    var formData = {'username': $('input[name=UserName]').val()};
+    //alert('This is the beginning');
+    //var formData = {'username': $('input[name=IT3]').val()};
+    var formData = {'username': 'IT3'};
       $.ajax({
           type: 'POST',
           url: 'https://region-lock.herokuapp.com/proxy/query', 
@@ -20,10 +21,11 @@ This is the proxy page for {{ shop.name }}. </br>
         }).done(function(data){ 
            //var purchases = data.purchases;
            alert('Ajax worked');
+           document.getElementById("responseContainer").innerHTML = data;
 
 
       }).error(function(errorData){
-         alert("It didn't work");
+         //alert("It didn't work");
 
       	document.getElementById("responseContainer").innerHTML = "Something went wrong. Don't worry, we're working on it!";
 
