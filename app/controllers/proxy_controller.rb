@@ -31,8 +31,9 @@ class ProxyController < ApplicationController
     #matchupN = matchup.last_name
     #render :json => matchupN
     matchupS = matchup.to_s
-    #render :json => "Testing"
-    render :html => "<p>Testing</p>"
+    render :json => '{ "name":"Testing", "age":31, "city":"Los Angeles" }'
+    #render :json => '"Testing"'
+    #render :html => "<p>Testing</p>"
     #render :json => matchupS
    # redirect_to(:action => 'index') 
 

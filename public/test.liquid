@@ -25,7 +25,8 @@ This is the proxy page for {{ shop.name }}. </br>
         }).done(function(data){ 
            //var purchases = data.purchases;
            alert('Ajax worked');
-           document.getElementById("responseContainer").innerHTML = data;
+           var data_string = JSON.parse(data);
+           document.getElementById("responseContainer").innerHTML = data_string.name;
 
 
       }).error(function(errorData){
