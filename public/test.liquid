@@ -50,7 +50,12 @@ List of products in the store: </br></br>
 {% for product in collections['vanilla'].products %} 
    {% if product.title contains 'Sister' %}
      - {{ product.title }}</br>
-   {% endif %}   
+   {% endif %} 
+
+   {% if product.handle == 'deep_stalker' %}
+     - {{ product.featured_image}}</br>
+   {% endif %} 
+
 {% endfor %}
 
 {% else %}
