@@ -54,7 +54,9 @@ List of products in the store: </br></br>
 
    {% if product.handle == 'bust-to-bust' %}
      {% for image in product.images %}
-      <img src="{{ image.src | product_img_url: 'medium' }}"></br>
+       {% if forloop.first == true %}
+         <img src="{{ image.src | product_img_url: 'medium' }}"></br>
+       {% endif %}
      {% endfor %}
    {% endif %} 
 
