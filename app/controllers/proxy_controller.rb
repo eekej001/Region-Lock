@@ -26,12 +26,22 @@ class ProxyController < ApplicationController
 
   def query
     fname = params[:username]
-    matchup = Form.where(:first_name => '#{fname}').first
+    @matchup = Form.where(:first_name => '#{fname}').first
+    render :json => @matchup
+
+
+
+    #### MANUAL JSON TEXT SEND  #####   
+    #render :json => '{"name":"Testing", "age":31, "city":"Los Angeles"}'
+    #### END #####
+    
+
+    #matchupS = matchup.to_s
+
     #matchup = Form.where(:first_name => "IT3").first
     #matchupN = matchup.last_name
     #render :json => matchupN
-    matchupS = matchup.to_s
-    render :json => '{"name":"Testing", "age":31, "city":"Los Angeles"}'
+    
     #render :json => '"Testing"'
     #render :html => "<p>Testing</p>"
     #render :json => matchupS
