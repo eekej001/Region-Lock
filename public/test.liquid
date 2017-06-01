@@ -28,8 +28,8 @@ This is the proxy page for {{ shop.name }}. </br>
            //var data_string = JSON.parse(data);
            //document.getElementById("responseContainer").innerHTML = data.name;
            document.getElementById("responseContainer").innerHTML = data.last_name;
-           document.getElementById("liquidResponseContainer").innerHTML = '{{ hey }}';
-
+           #document.getElementById("liquidResponseContainer").innerHTML = '{{ hey }}';
+           document.getElementById("liquidResponseContainer").innerHTML = 'hey';
 
 
       }).error(function(errorData){
@@ -60,7 +60,7 @@ List of products in the store: </br></br>
 {% endif %}
 
 
-<div id='responseContainer'></div>
+<div id='responseContainer'></div></br>
 <div id='liquidResponseContainer'></div>
 
 </div>
