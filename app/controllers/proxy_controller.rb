@@ -32,7 +32,7 @@ class ProxyController < ApplicationController
     #render :json => matchupN
     matchupS = matchup.to_s
     #render :json => "Testing"
-    render :plain => "Testing"
+    render :html => "<p>Testing</p>"
     #render :json => matchupS
    # redirect_to(:action => 'index') 
 
