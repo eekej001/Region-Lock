@@ -53,7 +53,7 @@ List of products in the store: </br></br>
    {% endif %} 
 
    {% if product.handle == 'bust-to-bust' %}
-     <img src="{{ image | product_img_url: 'large' }}" alt="{{ image.alt | escape }}" /></br>
+     <img src="{{ image | product_img_url: '1024x1024' }}" alt="{{ image.alt | escape }}" /></br>
    {% endif %} 
 
 {% endfor %}
