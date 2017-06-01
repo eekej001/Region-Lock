@@ -26,7 +26,7 @@ class ProxyController < ApplicationController
 
   def query
     fname = params[:username]
-    matchup = Form.where(:first_name => 'IT3').first
+    matchup = Form.where(:first_name => '#{fname}').first
     matchupS = matchup.to_s
     render :json => matchupS
    # redirect_to(:action => 'index') 
