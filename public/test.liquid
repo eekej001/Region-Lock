@@ -95,9 +95,9 @@ List of products in the store: </br></br>
 {% endfor %}
 
 
+{% paginate collections.all.products by 1000 %}
 
-
-{% for product in collections['all'].products limit: 190 %}
+{% for product in collections.all.products %}
      {{ product.title }}</br>
 {% endfor %}     
 
@@ -106,7 +106,7 @@ List of products in the store: </br></br>
 
 
       {% assign marker = 4 %}
-      {% for product in collections['all'].products limit: 190 %}
+      {% for product in collections.all.products %}
           <div class='productSection'>
              <p class='tempMarker'>{{ marker}}</p></br>
              <p class='pHandle'>{{ product.handle}}</p></br>
@@ -120,7 +120,7 @@ List of products in the store: </br></br>
        {% assign marker = marker | plus: 1 %}   
       {% endfor %}
 
-
+{% endpaginate %}
 
 
 {% else %}
@@ -128,6 +128,8 @@ List of products in the store: </br></br>
    Please login to access your streaming purchases.
 
 {% endif %}
+
+
 
 
 <div id='responseContainer'></div></br>
