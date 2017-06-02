@@ -73,8 +73,8 @@ This is the proxy page for {{ shop.name }}. </br>
                for(n=0; n<allD.length; n++) {
                   var thisD = $('div.productSection')[n];
                   if (!$(thisD).hasClass('ordered')) {
-                   // $(thisD).remove();
-                   $(thisD).css( "background-color", "red" );
+                    $(thisD).remove();
+                   //$(thisD).css( "background-color", "red" );
                   };
                 }; 
 
