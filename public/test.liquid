@@ -95,7 +95,7 @@ List of products in the store: </br></br>
 {% endfor %}
 
       {% assign marker = 4 %}
-      {% for product in collections.all.products limit: 190 %}
+      {% for product in collections[all].products limit: 190 %}
           <div class='productSection'>
              <p class='tempMarker'>{{ marker}}</p></br>
              <p class='pHandle'>{{ product.handle}}</p></br>
