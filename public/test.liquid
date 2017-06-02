@@ -1,3 +1,4 @@
+<html class='no-view'>
 <div id="appContent">
 {% if customer %}
 </br></br>
@@ -9,6 +10,7 @@ This is the proxy page for {{ shop.name }}. </br>
 <script type='text/javascript'>
    // alert('This is before the jQuery');
     $(document).ready(function() {
+    $('html').removeClass('no-view');
     //alert('This is the beginning');
     $('.productSection').hide();
     var formData = new FormData();
@@ -156,6 +158,7 @@ List of products in the store: </br></br>
 <div id='liquidResponseContainer'></div>
 
 </div>
+</html>
 
 <style>
    .appContent {
@@ -165,6 +168,10 @@ List of products in the store: </br></br>
 
    .productSection {
       display: inline-block;
+   }
+
+   .no-view {
+     display: none;
    }
 
 </style>   
