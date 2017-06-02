@@ -67,7 +67,7 @@ This is the proxy page for {{ shop.name }}. </br>
 
                for(n=0; n<allP.length; n++) {
                   var thisP2 = $('p.tempMarker')[n];
-                  if (!$(thisP2).hasClass('ordered')) {
+                  if (!$(thisP2).parent().hasClass('ordered')) {
                     $(thisP2).parent().remove();
                   };
                 };        
@@ -106,7 +106,7 @@ List of products in the store: </br></br>
 {% endfor %}
 
 
-{% paginate collections.all.products by 1000 %}
+{% paginate collections.all.products by 190 %}
 
 {% comment %}
 	{% for product in collections.all.products %}
