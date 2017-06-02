@@ -55,12 +55,23 @@ This is the proxy page for {{ shop.name }}. </br>
                     var thisP = $('p.tempMarker')[m];
                     // $(thisP).parent().css( "background-color", "red" );
                     $(thisP).parent().show();
+                    $(thisP).parent().addClass('ordered');
                      console.log("Marker Match" + markN);
                   };
 
             
 
                };
+
+
+
+               for(n=0; n<allP.length; n++) {
+                  if (!$('p.tempMarker')[n].hasClass('ordered')) {
+                    var thisP2 = $('p.tempMarker')[n];
+                    $(thisP2).parent().remove();
+                  };
+                };        
+                 
             };   
 
 
@@ -97,9 +108,11 @@ List of products in the store: </br></br>
 
 {% paginate collections.all.products by 1000 %}
 
-{% for product in collections.all.products %}
-     {{ product.title }}</br>
-{% endfor %}     
+{% comment %}
+	{% for product in collections.all.products %}
+	     {{ product.title }}</br>
+	{% endfor %}    
+{% endcomment %} 
 
 
 
