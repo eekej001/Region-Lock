@@ -11,7 +11,7 @@ This is the proxy page for {{ shop.name }}. </br>
     $(document).ready(function() {
     //alert('This is the beginning');
     var formData = new FormData();
-    formData.append('username', 'IT3');
+    formData.append('username', 'Test');
     //var formData = {'username': $('input[name=IT3]').val()};
     //var formData = {'username': 'IT3'};
       $.ajax({
@@ -24,10 +24,10 @@ This is the proxy page for {{ shop.name }}. </br>
           encode: true
         }).done(function(data){ 
            //var purchases = data.purchases;
-           alert('Ajax worked');
+           //alert('Ajax worked');
            //var data_string = JSON.parse(data);
            //document.getElementById("responseContainer").innerHTML = data.name;
-           document.getElementById("responseContainer").innerHTML = data.last_name;
+           document.getElementById("responseContainer").innerHTML = data[3].last_name;
            //document.getElementById("liquidResponseContainer").innerHTML = '{{ hey }}';
            document.getElementById("liquidResponseContainer").innerHTML = 'hey';
 
@@ -55,12 +55,28 @@ List of products in the store: </br></br>
    {% if product.handle == 'bust-to-bust' %}
      {% for image in product.images %}
        {% if forloop.first == true %}
-         <img src="{{ image.src | product_img_url: 'medium' }}"></br>
+         <img src="{{ image.src | product_img_url: 'large' }}"></br>
        {% endif %}
      {% endfor %}
    {% endif %} 
 
 {% endfor %}
+
+
+      {% for product in collections.all.products %}
+          <div class='productSection'>
+              {{ product.handle}} </br>
+                   {% for image in product.images %}
+				       {% if forloop.first == true %}
+				         {{ image.src }}</br>
+				       {% endif %}
+				     {% endfor %}
+			  <p>'________________________'</p>	     
+          </div>
+      {% endfor %}
+
+
+
 
 {% else %}
 </br></br>
