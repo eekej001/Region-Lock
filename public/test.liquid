@@ -10,7 +10,6 @@ This is the proxy page for {{ shop.name }}. </br>
 <script type='text/javascript'>
    // alert('This is before the jQuery');
     $(document).ready(function() {
-    $('html').removeClass('no-view');
     //alert('This is the beginning');
     $('.productSection').hide();
     var formData = new FormData();
@@ -92,6 +91,8 @@ This is the proxy page for {{ shop.name }}. </br>
         //Something went wrong with the ajax call. It'll be dealt with here
       });
   });
+
+  $('html').removeClass('no-view');
   
 </script>
 
