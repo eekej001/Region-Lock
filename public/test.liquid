@@ -68,7 +68,7 @@ This is the proxy page for {{ shop.name }}. </br>
 
 
 
-            var allD = $('div.productSection');
+           /* var allD = $('div.productSection');
 
                for(n=0; n<allD.length; n++) {
                   var thisD = $('div.productSection')[n];
@@ -77,7 +77,18 @@ This is the proxy page for {{ shop.name }}. </br>
                    //$(thisD).css( "background-color", "red" );
                   };
                 }; 
+          */
 
+
+          var allD = $('div.productSection');
+
+               for(n=0; n<allD.length; n++) {
+                  var thisD = $('div.productSection')[n];
+                  if ($(thisD).hasClass('ordered')) {
+                   // $(thisD).remove();
+                   $(thisD).css( "background-color", "red" );
+                  };
+                }; 
 
 
 
