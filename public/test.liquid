@@ -87,7 +87,7 @@ List of products in the store: </br></br>
    {% if product.handle == 'bust-to-bust' %}
      {% for image in product.images %}
        {% if forloop.first == true %}
-         <img src="{{ image.src | product_img_url: 'large' }}"></br>
+         <img src="{{ image.src | product_img_url: 'medium' }}"></br>
        {% endif %}
      {% endfor %}
    {% endif %} 
@@ -101,7 +101,7 @@ List of products in the store: </br></br>
              <p class='pHandle'>{{ product.handle}}</p></br>
                    {% for image in product.images %}
 				       {% if forloop.first == true %}
-				         <img src="{{ image.src | product_img_url: 'large' }}"></br>
+				         <img src="{{ image.src | product_img_url: 'medium' }}"></br>
 				       {% endif %}
 				     {% endfor %}
 			  <p>'________________________'</p>	     
@@ -128,6 +128,10 @@ List of products in the store: </br></br>
    .appContent {
      position: relative;
      left: 25%;
+   }
+
+   .productSection {
+      display: inline-block;
    }
 
 </style>   
