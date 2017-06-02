@@ -66,8 +66,8 @@ This is the proxy page for {{ shop.name }}. </br>
 
 
                for(n=0; n<allP.length; n++) {
-                  if (!$('p.tempMarker')[n].hasClass('ordered')) {
-                    var thisP2 = $('p.tempMarker')[n];
+                  var thisP2 = $('p.tempMarker')[n];
+                  if (!$(thisP2).hasClass('ordered')) {
                     $(thisP2).parent().remove();
                   };
                 };        
