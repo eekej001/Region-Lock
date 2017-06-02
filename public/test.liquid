@@ -26,13 +26,25 @@ This is the proxy page for {{ shop.name }}. </br>
             console.log(data);
             console.log(status);
             console.log(error);
-           //var purchases = data.purchases;
            //alert('Ajax worked');
            //var data_string = JSON.parse(data);
-           //document.getElementById("responseContainer").innerHTML = data.name;
            document.getElementById("responseContainer").innerHTML = data[3].last_name;
-           //document.getElementById("liquidResponseContainer").innerHTML = '{{ hey }}';
            document.getElementById("liquidResponseContainer").innerHTML = 'hey';
+
+           for(i=0; i<data.length; i++) {
+
+             var ln = data[i].last_name;
+             var allP = $('p.tempMarker');
+
+
+               for(m=0; m<allP.length; m++) {
+                  if (allP[m].innerhtml == ln) {
+                     allP[m].parent().css( "background-color", "red" );
+                  };
+
+
+
+           };
 
 
       }).error(function(errorData){
@@ -65,9 +77,10 @@ List of products in the store: </br></br>
 
 {% endfor %}
 
-
+      {% assign marker = 4 %}
       {% for product in collections.all.products %}
           <div class='productSection'>
+             <p class='tempMarker'>{{ marker}}</p></br>
              <p class='pHandle'>{{ product.handle}}</p></br>
                    {% for image in product.images %}
 				       {% if forloop.first == true %}
@@ -76,6 +89,7 @@ List of products in the store: </br></br>
 				     {% endfor %}
 			  <p>'________________________'</p>	     
           </div>
+       {% assign marker = marker | plus: 1 %}   
       {% endfor %}
 
 

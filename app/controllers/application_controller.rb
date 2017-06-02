@@ -9,8 +9,9 @@ def add_cors_headers
   origin = request.headers["Origin"]
   unless (not origin.nil?) and (origin == "http://localhost" or origin.starts_with? "http://localhost:")
     origin = "https://projecthentai.com"
+    origin2 = "https://www.projecthentai.com"
   end
-  headers['Access-Control-Allow-Origin'] = origin
+  headers['Access-Control-Allow-Origin'] = origin, origin2
   headers['Access-Control-Allow-Methods'] = 'POST, GET, OPTIONS, PUT, DELETE'
   allow_headers = request.headers["Access-Control-Request-Headers"]
   if allow_headers.nil?
