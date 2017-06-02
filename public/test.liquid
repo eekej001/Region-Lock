@@ -51,7 +51,8 @@ This is the proxy page for {{ shop.name }}. </br>
             */ 
 
                     if ($('p.tempMarker')[m].innerHTML == ln) {
-                     $('p.tempMarker')[m].parent().css( "background-color", "red" );
+                    var this = $('p.tempMarker')[m];
+                     $(this).parent().css( "background-color", "red" );
                      console.log("Marker Match" + markN);
                   };
 
