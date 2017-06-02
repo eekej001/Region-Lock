@@ -22,7 +22,10 @@ This is the proxy page for {{ shop.name }}. </br>
           processData: false,
 		  contentType: false,
           encode: true
-        }).done(function(data){ 
+        }).done(function(data, status, error){ 
+            console.log(data);
+            console.log(status);
+            console.log(error);
            //var purchases = data.purchases;
            //alert('Ajax worked');
            //var data_string = JSON.parse(data);
@@ -65,10 +68,10 @@ List of products in the store: </br></br>
 
       {% for product in collections.all.products %}
           <div class='productSection'>
-              {{ product.handle}} </br>
+             <p class='pHandle'>{{ product.handle}}</p></br>
                    {% for image in product.images %}
 				       {% if forloop.first == true %}
-				         {{ image.src }}</br>
+				         <p class ='pImageUrl'>{{ image.src | product_img_url: 'large' }}</p></br>
 				       {% endif %}
 				     {% endfor %}
 			  <p>'________________________'</p>	     
