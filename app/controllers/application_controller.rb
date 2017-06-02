@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
 def add_cors_headers
   origin = request.headers["Origin"]
   unless (not origin.nil?) and (origin == "http://localhost" or origin.starts_with? "http://localhost:")
-    origin = "https://www.projecthentai.com"
+    origin = "https://projecthentai.com"
   end
   headers['Access-Control-Allow-Origin'] = origin
   headers['Access-Control-Allow-Methods'] = 'POST, GET, OPTIONS, PUT, DELETE'
