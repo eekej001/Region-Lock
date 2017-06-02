@@ -63,12 +63,12 @@ This is the proxy page for {{ shop.name }}. </br>
 
                };
 
+               var allD = $('div.productSection');
 
-
-               for(n=0; n<allP.length; n++) {
-                  var thisP2 = $('p.tempMarker')[n];
-                  if (!$(thisP2).parent().hasClass('ordered')) {
-                    $(thisP2).parent().remove();
+               for(n=0; n<allD.length; n++) {
+                  var thisD = $('div.productSection')[n];
+                  if (!$(thisD).hasClass('ordered')) {
+                    $(thisD).remove();
                   };
                 };        
                  
