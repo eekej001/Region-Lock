@@ -32,14 +32,19 @@ This is the proxy page for {{ shop.name }}. </br>
            document.getElementById("liquidResponseContainer").innerHTML = 'hey';
 
            for(i=0; i<data.length; i++) {
+           console.log("Data Length: " + data.length);
 
              var ln = data[i].last_name;
              var allP = $('p.tempMarker');
+             console.log("Ajax Last Name: " + data[i].last_name);
 
-
+               console.log("Temp Marker P Length: " + data.length);
                for(m=0; m<allP.length; m++) {
+                 var markN = allP[m].innerhtml;
+                 console.log("Inner Html Marker Number: " + markN);
                   if (allP[m].innerhtml == ln) {
                      allP[m].parent().css( "background-color", "red" );
+                     console.log("Marker Match" + markN);
                   };
 
                };
