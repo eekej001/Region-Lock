@@ -90,9 +90,14 @@ This is the proxy page for {{ shop.name }}. </br>
         //Something went wrong with the ajax call. It'll be dealt with here
       });
 
+      var pOrder = $('div.ordered');
+        for(o; o< pOrder.length; o++) {
+            var pOrderI = $('div.ordered')[o];
+            $(pOrderI).parent().removeClass('no-view');
+        };
 
-      $('.ordered').removeClass('no-view');
-      $('.productSection').css( "display", "inline-block" );
+      //$('.ordered').removeClass('no-view');
+      $('.ordered').css( "display", "inline-block" );
   });
 
   
