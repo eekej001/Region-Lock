@@ -1,4 +1,3 @@
-<html class='no-view'>
 <div id="appContent">
 {% if customer %}
 </br></br>
@@ -92,7 +91,7 @@ This is the proxy page for {{ shop.name }}. </br>
       });
   });
 
-  $('html').removeClass('no-view');
+  $('.no-view').removeClass('no-view');
   
 </script>
 
@@ -130,6 +129,7 @@ List of products in the store: </br></br>
 
       {% assign marker = 4 %}
       {% for product in collections.all.products %}
+      <div class='no-view'>
           <div class='productSection'>
              <p class='tempMarker'>{{ marker}}</p></br>
              <p class='pHandle'>{{ product.handle}}</p></br>
@@ -140,6 +140,7 @@ List of products in the store: </br></br>
 				     {% endfor %}
 			  <p>'________________________'</p>	     
           </div>
+       </div>   
        {% assign marker = marker | plus: 1 %}   
       {% endfor %}
 
@@ -159,7 +160,6 @@ List of products in the store: </br></br>
 <div id='liquidResponseContainer'></div>
 
 </div>
-</html>
 
 <style>
    .appContent {
