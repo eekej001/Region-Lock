@@ -95,6 +95,17 @@ This is the proxy page for {{ shop.name }}. </br>
      // $('.productSection').css( "background-color", "red" );
 
 
+           var allD = $('div.productSection');
+
+               for(n=0; n<allD.length; n++) {
+                  var thisD = $('div.productSection')[n];
+                  if (!$(thisD).hasClass('ordered')) {
+                    $(thisD).remove();
+                   //$(thisD).css( "background-color", "red" );
+                  };
+                }; 
+
+
       }).error(function(errorData){
          //alert("It didn't work");
 
