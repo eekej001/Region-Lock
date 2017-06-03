@@ -56,7 +56,7 @@ This is the proxy page for {{ shop.name }}. </br>
                     // $(thisP).parent().css( "background-color", "red" );
                     $(thisP).parent().show();
                     $(thisP).parent().addClass('ordered');
-                    alert("Has class " + m);
+                    //alert("Has class " + m);
                      console.log("Marker Match" + markN);
                   };
 
@@ -80,7 +80,17 @@ This is the proxy page for {{ shop.name }}. </br>
                 }; 
           */
 
+         
 
+         var pOrder = $('div.ordered');
+      alert(pOrder.length);
+        for(o=0; o< pOrder.length; o++) {
+            var pOrderI = $('div.ordered')[o];
+            $(pOrderI).parent().removeClass('no-view');
+        };
+
+      //$('.ordered').removeClass('no-view');
+      $('.ordered').css( "display", "inline-block" );
 
 
       }).error(function(errorData){
@@ -91,15 +101,7 @@ This is the proxy page for {{ shop.name }}. </br>
         //Something went wrong with the ajax call. It'll be dealt with here
       });
 
-      var pOrder = $('div.ordered');
-      alert(pOrder.length);
-        for(o=0; o< pOrder.length; o++) {
-            var pOrderI = $('div.ordered')[o];
-            $(pOrderI).parent().removeClass('no-view');
-        };
-
-      //$('.ordered').removeClass('no-view');
-      $('.ordered').css( "display", "inline-block" );
+      
   });
 
   
