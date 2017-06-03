@@ -99,14 +99,14 @@ This is the proxy page for {{ shop.name }}. </br>
 
            var nvD = $('div.no-view');
 
-
+           setInterval(function(){
                for(n=0; n<nvD.length; n++) {
                   var thisD = $('div.no-view')[n];
                    $(thisD).remove();
-                   alert('removing no-view ' + n);
+                  // alert('removing no-view ' + n);
                };
                  
-
+            }, 5000);
 
       }).error(function(errorData){
          //alert("It didn't work");
@@ -193,6 +193,9 @@ List of products in the store: </br></br>
      left: 25%;
    }
 
+   .no-view {
+     display: none;
+   }
 
 </style>   
 
