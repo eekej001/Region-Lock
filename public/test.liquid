@@ -97,17 +97,19 @@ This is the proxy page for {{ shop.name }}. </br>
      // $('.productSection').css( "background-color", "red" );
 
 
-           var nvD = $('div.no-view');
-           var nvDL = nvD.length;
-           alert(nvD.length);
+
+     	  $('div.no-view').remove();
+          // var nvD = $('div.no-view');
+           //var nvDL = nvD.length;
+           //alert(nvD.length);
           // setInterval(function(){
-           alert("Removing no views");
+       /*    alert("Removing no views");
                for(n=0; n<nvDL; n++) {
                   var thisD = $('div.no-view')[n];
                    $(thisD).remove();
                   // alert('removing no-view ' + n);
                };
-                 
+  */               
          //   }, 5000);
 
       }).error(function(errorData){
