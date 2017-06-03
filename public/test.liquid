@@ -86,13 +86,13 @@ This is the proxy page for {{ shop.name }}. </br>
       //alert(pOrder.length);
         for(o=0; o< pOrder.length; o++) {
             var pOrderI = $('div.ordered')[o];
-            $(pOrderI).parent().removeClass('no-view');
+            $(pOrderI).removeClass('no-view');
             //$(pOrderI).parent().css('width', '75px');
         };
 
       //$('.ordered').removeClass('no-view');
       $('.productSection').css( "display", "inline-block" );
-      $('.productSection').css( "background-color", "red" );
+     // $('.productSection').css( "background-color", "red" );
 
 
       }).error(function(errorData){
@@ -144,8 +144,7 @@ List of products in the store: </br></br>
 
       {% assign marker = 4 %}
       {% for product in collections.all.products %}
-      <div class='no-view'>
-          <div class='productSection'>
+          <div class='productSection no-view'>
              <p class='tempMarker'>{{ marker}}</p></br>
              <p class='pHandle'>{{ product.handle}}</p></br>
                    {% for image in product.images %}
@@ -154,8 +153,7 @@ List of products in the store: </br></br>
 				       {% endif %}
 				     {% endfor %}
 			  <p>'________________________'</p>	     
-          </div>
-       </div>   
+          </div> 
        {% assign marker = marker | plus: 1 %}   
       {% endfor %}
 
