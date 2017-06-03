@@ -90,6 +90,8 @@ This is the proxy page for {{ shop.name }}. </br>
             //$(pOrderI).parent().css('width', '75px');
         };
 
+        alert('finished displaying ordered');
+
       //$('.ordered').removeClass('no-view');
       $('.ordered').css( "display", "inline-block" );
      // $('.productSection').css( "background-color", "red" );
@@ -97,9 +99,11 @@ This is the proxy page for {{ shop.name }}. </br>
 
            var nvD = $('div.no-view');
 
+
                for(n=0; n<nvD.length; n++) {
                   var thisD = $('div.no-view')[n];
                    $(thisD).remove();
+                   alert('removing no-view ' + n);
                };
                  
 
