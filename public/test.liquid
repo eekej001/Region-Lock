@@ -87,11 +87,11 @@ This is the proxy page for {{ shop.name }}. </br>
         for(o=0; o< pOrder.length; o++) {
             var pOrderI = $('div.ordered')[o];
             $(pOrderI).parent().removeClass('no-view');
-            $(pOrderI).parent().css('width', '75px');
+            //$(pOrderI).parent().css('width', '75px');
         };
 
       //$('.ordered').removeClass('no-view');
-      $('.ordered').css( "display", "inline-block" );
+      $('.productSection').css( "display", "inline-block" );
 
 
       }).error(function(errorData){
