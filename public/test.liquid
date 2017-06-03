@@ -99,7 +99,7 @@ This is the proxy page for {{ shop.name }}. </br>
 
            var nvD = $('div.no-view');
 
-           setInterval(function(){
+           setTimeOut(function(){
                for(n=0; n<nvD.length; n++) {
                   var thisD = $('div.no-view')[n];
                    $(thisD).remove();
