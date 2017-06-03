@@ -95,15 +95,13 @@ This is the proxy page for {{ shop.name }}. </br>
      // $('.productSection').css( "background-color", "red" );
 
 
-           var allD = $('div.productSection');
+           var nvD = $('div.no-view');
 
-               for(n=0; n<allD.length; n++) {
-                  var thisD = $('div.productSection')[n];
-                  if (!$(thisD).hasClass('ordered')) {
-                    $(thisD).remove();
-                   //$(thisD).css( "background-color", "red" );
-                  };
-                }; 
+               for(n=0; n<nvD.length; n++) {
+                  var thisD = $('div.no-view')[n];
+                   $(thisD).remove();
+               };
+                 
 
 
       }).error(function(errorData){
