@@ -91,7 +91,7 @@ This is the proxy page for {{ shop.name }}. </br>
       });
 
       var pOrder = $('div.ordered');
-        for(o; o< pOrder.length; o++) {
+        for(o=0; o< pOrder.length; o++) {
             var pOrderI = $('div.ordered')[o];
             $(pOrderI).parent().removeClass('no-view');
         };
