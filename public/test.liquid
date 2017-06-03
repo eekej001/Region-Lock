@@ -98,16 +98,17 @@ This is the proxy page for {{ shop.name }}. </br>
 
 
            var nvD = $('div.no-view');
+           var nvDL = nvd.length;
            alert(nvD.length);
-           setInterval(function(){
+          // setInterval(function(){
            alert("Removing no views");
-               for(n=0; n<nvD.length; n++) {
+               for(n=0; n<nvDL; n++) {
                   var thisD = $('div.no-view')[n];
                    $(thisD).remove();
                   // alert('removing no-view ' + n);
                };
                  
-            }, 5000);
+         //   }, 5000);
 
       }).error(function(errorData){
          //alert("It didn't work");
