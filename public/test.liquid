@@ -29,8 +29,9 @@ This is the proxy page for {{ shop.name }}. </br>
             console.log(error);
            //alert('Ajax worked');
            //var data_string = JSON.parse(data);
-           document.getElementById("responseContainer").innerHTML = data[3].last_name;
-           document.getElementById("liquidResponseContainer").innerHTML = 'hey';
+          
+           //document.getElementById("responseContainer").innerHTML = data[3].last_name;
+           //document.getElementById("liquidResponseContainer").innerHTML = 'hey';
 
            for(i=0; i<data.length; i++) {
            console.log("Data Length: " + data.length);
@@ -217,6 +218,10 @@ List of products in the store: </br></br>
    .pImage {
      width: 170px;
      height: 240px;
+   }
+
+   .ordered {
+     margin-right: 1%;
    }
 
    .roBut {
