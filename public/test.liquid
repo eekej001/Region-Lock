@@ -167,7 +167,7 @@ List of products in the store: </br></br>
              <p class='pTitle'>{{ product.title}}</p></br>
                    {% for image in product.images %}
 				       {% if forloop.first == true %}
-				         <img src="{{ image.src | product_img_url: 'medium' }}"></br>
+				         <img class='pImage' src="{{ image.src | product_img_url: 'medium' }}"></br>
 				       {% endif %}
 				     {% endfor %}
 			  <button id='{{product.handle}}' class='roBut'>READ ONLINE</button>	     
@@ -206,6 +206,15 @@ List of products in the store: </br></br>
      display:none;
    }
 
+   .pTitle {
+     width: 170px;
+     font-weight: bold;
+   }
+
+   .pImage {
+     width: 170px;
+   }
+
    .roBut {
      background-color: white; 
      color: black; 
@@ -213,8 +222,7 @@ List of products in the store: </br></br>
      padding: 7px 16px;
      text-decoration: none;
      text-align: center;
-     width: 170px;
-     
+     width: 170px;  
    }
 
    .roBut:hover {
