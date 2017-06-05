@@ -169,7 +169,7 @@ List of products in the store: </br></br>
 				         <img src="{{ image.src | product_img_url: 'medium' }}"></br>
 				       {% endif %}
 				     {% endfor %}
-			  <button id='{{product.handle}}'>Read Online</button>	     
+			  <button id='{{product.handle}}' class='roBut'>READ ONLINE</button>	     
           </div> 
        {% assign marker = marker | plus: 1 %}   
       {% endfor %}
@@ -195,6 +195,15 @@ List of products in the store: </br></br>
    .appContent {
      position: relative;
      left: 25%;
+   }
+
+   .tempMarker {
+     display: none;
+   }
+
+   .roBut {
+     background-color: red;
+     margin: auto;
    }
 
    .no-view {
