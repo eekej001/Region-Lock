@@ -90,7 +90,7 @@ This is the proxy page for {{ shop.name }}. </br>
             //$(pOrderI).parent().css('width', '75px');
         };
 
-        alert('finished displaying ordered');
+       // alert('finished displaying ordered');
 
       //$('.ordered').removeClass('no-view');
       $('.ordered').css( "display", "inline-block" );
@@ -169,7 +169,7 @@ List of products in the store: </br></br>
 				         <img src="{{ image.src | product_img_url: 'medium' }}"></br>
 				       {% endif %}
 				     {% endfor %}
-			  <p>'________________________'</p>	     
+			  <button id='{{product.handle}}'>Read Online</button>	     
           </div> 
        {% assign marker = marker | plus: 1 %}   
       {% endfor %}
