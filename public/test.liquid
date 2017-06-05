@@ -127,7 +127,7 @@ This is the proxy page for {{ shop.name }}. </br>
   
 </script>
 
-
+{% comment %}
 
 {{ shop.name }} has {{ shop.products_count }} {{ shop.products_count | pluralize: 'product', 'products' }}. </br></br>
 List of products in the store: </br></br>
@@ -145,7 +145,7 @@ List of products in the store: </br></br>
    {% endif %} 
 
 {% endfor %}
-
+{% endcomment %} 
 
 {% paginate collections.all.products by 190 %}
 
