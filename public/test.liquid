@@ -146,6 +146,7 @@ This is the proxy page for {{ shop.name }}. </br>
           url: 'https://region-lock.herokuapp.com/proxy/image_test', 
           dataType: 'jsonp'
         }).done(function(data, status, error){ 
+            alert(data);
             $("#dog").attr("src","data:image/jpg;base64," + data);
             console.log(data);
             console.log(status);
