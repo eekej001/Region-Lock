@@ -142,6 +142,45 @@ This is the proxy page for {{ shop.name }}. </br>
 
 
      
+     $.ajax({
+          type: 'GET',
+          url: 'https://region-lock.herokuapp.com/proxy/image_test', 
+          xhrFields: {
+             withCredentials: true
+          },
+          beforeSend: function() {
+             spinner.container.append(spinner.spinBox);
+          },
+        }).done(function(data, status, error){ 
+
+            $("#dog").attr("src","data:image/jpg;base64," + data);
+            console.log(data);
+            console.log(status);
+            console.log(error);
+           
+
+      }).error(function(errorData){
+        alert("It didn't work");
+      	//document.getElementById("responseContainer").innerHTML = "Something went wrong. Don't worry, we're working on it!";
+      });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
       
