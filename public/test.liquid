@@ -30,9 +30,8 @@ This is the proxy page for {{ shop.name }}. </br>
           processData: false,
 		  contentType: false,
           encode: true
-          beforeSend: function () {
+          beforeSend: function() {
              spinner.container.append(spinner.spinBox);
-
           },
         }).done(function(data, status, error){ 
             console.log(data);
@@ -291,8 +290,7 @@ List of products in the store: </br></br>
      left: 0;
      width: 100%;
      height: 100%;
-     background:rgba(255, 255, 255, .8) url ('https://i.giphy.com/3oEjI6SIIHBdRxXI40.gif') no-repeat 50%;
-
+     background:rgba(255, 255, 255, .8) url('https://i.giphy.com/3oEjI6SIIHBdRxXI40.gif') no-repeat 50%;
    }
 
 </style>   
