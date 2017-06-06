@@ -171,7 +171,8 @@ List of products in the store: </br></br>
 				         <img class='pImage' src="{{ image.src | product_img_url: 'medium' }}"></br>
 				       {% endif %}
 				     {% endfor %}
-			  <button id='{{product.handle}}' class='roBut'>READ ONLINE</button>	     
+			  <button id='{{product.handle}}' class='roBut'>READ ONLINE</button>	
+			  <div class='dboxOverlay'></div>     
           </div> 
        {% assign marker = marker | plus: 1 %}   
       {% endfor %}
@@ -199,6 +200,24 @@ List of products in the store: </br></br>
      left: 25%;
    }
 
+   .productSection {
+     position: relative;
+   }
+
+   .dboxOverlay {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100;
+     background-color: black;
+     opacity: 0.8;
+   }
+
+   .dboxOverlay:hover {
+     opacity: 0;
+   }
+
    .tempMarker {
      display: none;
    }
@@ -220,9 +239,9 @@ List of products in the store: </br></br>
      height: 240px;
    }
 
-   .pImage:hover {
+   <!--.pImage:hover {
      opacity: 0.7;
-   }
+   }   -->
 
    .ordered {
      margin-right: 1%;
