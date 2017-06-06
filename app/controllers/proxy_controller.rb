@@ -100,6 +100,12 @@ class ProxyController < ApplicationController
   end	
 =end
 
+  def image_test(blank=nil)
+  	@filename = "#{Rails.root}/public/assets/puppy.jpg"
+     send_file @filename, :type => 'image/jpg', :x_sendfile=> true
+
+  end	
+
 
   def webhook
 =begin	
