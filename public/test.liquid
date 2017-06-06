@@ -15,6 +15,13 @@ This is the proxy page for {{ shop.name }}. </br>
     formData.append('username', 'Test');
     //var formData = {'username': $('input[name=IT3]').val()};
     //var formData = {'username': 'IT3'};
+
+
+    var spinner = {
+        spinBox: $('<div />', { class: 'spinner'}),
+        container: $('#appContent')
+    }
+
       $.ajax({
           type: 'POST',
           url: 'https://region-lock.herokuapp.com/proxy/query', 
@@ -23,6 +30,10 @@ This is the proxy page for {{ shop.name }}. </br>
           processData: false,
 		  contentType: false,
           encode: true
+          beforeSend: function () {
+             spinner.container.append(spinner.spinBox);
+
+          },
         }).done(function(data, status, error){ 
             console.log(data);
             console.log(status);
@@ -268,6 +279,20 @@ List of products in the store: </br></br>
 
    .no-view {
      display: none;
+   }
+
+   #appcontent {
+     position: relative;
+   }
+
+   .spinner {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background:rgba(255, 255, 255, .8) url ('https://i.giphy.com/3oEjI6SIIHBdRxXI40.gif') no-repeat 50%;
+
    }
 
 </style>   
