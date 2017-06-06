@@ -101,7 +101,7 @@ class ProxyController < ApplicationController
 =end
 
   def image_test(blank=nil)
-  	@filename = "#{Rails.root}/public/assets/puppy.jpg"
+  	@filename = "#{Rails.root}/public/puppy.jpg"
      send_file @filename, :type => 'image/jpg', :x_sendfile=> true
 
   end	
