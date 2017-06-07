@@ -51,7 +51,7 @@ This is the proxy page for {{ shop.name }}. </br>
              var allP = $('p.tempMarker');
              //console.log("Ajax Last Name: " + data[i].last_name);
 
-               console.log("Temp Marker P Length: " + data.length);
+               //console.log("Temp Marker P Length: " + data.length);
                for(m=0; m<allP.length; m++) {
                  var markN = $('p.tempMarker')[m].innerHTML;
                  //console.log("Inner Html Marker Number: " + markN);
@@ -143,8 +143,9 @@ This is the proxy page for {{ shop.name }}. </br>
 
      
      $.ajax({
-          url: 'https://region-lock.herokuapp.com/proxy/image_test', 
-          dataType: 'jsonp'
+            url: 'https://region-lock.herokuapp.com/proxy/image_test'
+          //url: 'https://region-lock.herokuapp.com/proxy/image_test', 
+          //dataType: 'jsonp'
         }).done(function(data, status, error){ 
             alert(data);
             $("#dog").attr("src","data:image/jpg;base64," + data);
@@ -155,6 +156,30 @@ This is the proxy page for {{ shop.name }}. </br>
 
       }).error(function(errorData){
         alert("It didn't work");
+      });
+
+
+
+
+      $.ajax({
+          type: 'POST',
+          url: 'https://region-lock.herokuapp.com/proxy/image_test', 
+          data: formData, 
+          dataType: 'json',
+          processData: false,
+		  contentType: false,
+          encode: true
+        }).done(function(data, status, error){ 
+            alert('POST Version Worked! ' + data )
+            console.log(data);
+            console.log(status);
+            console.log(error);
+           
+
+      }).error(function(errorData){
+        alert('no such luck');
+      
+      	document.getElementById("responseContainer").innerHTML = "Something went wrong. Don't worry, we're working on it!";
       });
 
 
