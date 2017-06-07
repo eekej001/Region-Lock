@@ -149,6 +149,7 @@ This is the proxy page for {{ shop.name }}. </br>
         }).done(function(data, status, error){ 
             alert(data);
             $("#dog").attr("src","data:image/jpg;base64," + data);
+            document.getElementById("catchDog").innerHTML = data;
             console.log(data);
             console.log(status);
             console.log(error);
@@ -159,7 +160,7 @@ This is the proxy page for {{ shop.name }}. </br>
       });
 
 
-
+/*  POST METHOD ATTEMPT AT RETRIEVING PICTURE
 
       $.ajax({
           type: 'POST',
@@ -183,7 +184,7 @@ This is the proxy page for {{ shop.name }}. </br>
       });
 
 
-
+*/
 
 
 
@@ -275,6 +276,7 @@ List of products in the store: </br></br>
 <div id='responseContainer'></div></br>
 <div id='liquidResponseContainer'></div>
 <img id='dog' src='' />
+<div id='catchDog'></div>
 
 </div>
 
