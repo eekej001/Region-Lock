@@ -45,20 +45,20 @@ This is the proxy page for {{ shop.name }}. </br>
            //document.getElementById("liquidResponseContainer").innerHTML = 'hey';
 
            for(i=0; i<data.length; i++) {
-           console.log("Data Length: " + data.length);
+           //console.log("Data Length: " + data.length);
 
              var ln = data[i].last_name;
              var allP = $('p.tempMarker');
-             console.log("Ajax Last Name: " + data[i].last_name);
+             //console.log("Ajax Last Name: " + data[i].last_name);
 
                console.log("Temp Marker P Length: " + data.length);
                for(m=0; m<allP.length; m++) {
                  var markN = $('p.tempMarker')[m].innerHTML;
-                 console.log("Inner Html Marker Number: " + markN);
+                 //console.log("Inner Html Marker Number: " + markN);
 
             /*      if (allP[m].innerHTML == ln) {
                      allP[m].parent().css( "background-color", "red" );
-                     console.log("Marker Match" + markN);
+                     //console.log("Marker Match" + markN);
                   };
              
             */ 
@@ -69,7 +69,7 @@ This is the proxy page for {{ shop.name }}. </br>
                     $(thisP).parent().show();
                     $(thisP).parent().addClass('ordered');
                     //alert("Has class " + m);
-                     console.log("Marker Match" + markN);
+                     //console.log("Marker Match" + markN);
                   };
 
             
