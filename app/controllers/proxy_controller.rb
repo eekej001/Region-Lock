@@ -105,7 +105,7 @@ class ProxyController < ApplicationController
   	@filename = "#{Rails.root}/public/puppy.jpg"
   	@filenameEnc = Base64.encode64(@filename)
 
-  	send_file @filenameEnc, :type => 'text/plain', disposition: "inline", :x_sendfile=> true
+  	send_data @filenameEnc, :type => 'text/plain', disposition: "inline", :x_sendfile=> true
 
     #send_file @filename, :type => 'image/jpg', disposition: "inline", :x_sendfile=> true
 
