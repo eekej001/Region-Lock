@@ -101,11 +101,13 @@ class ProxyController < ApplicationController
 =end
 
   def image_test(blank=nil)
+    require 'base64'
   	@filename = "#{Rails.root}/public/puppy.jpg"
-    #render json: @filename, type: :jpg, content_type: 'image/jpg'
-  	#send_file Rails.root.join("public", "puppy.jpg"), type: "image/jpg", disposition: "inline"
-  	#send_data open(@filename, "rb") { |f| f.read }
-    send_file @filename, :type => 'image/jpg', disposition: "inline", :x_sendfile=> true
+  	@filenameEnc = Base64.encode64(@filename)
+
+  	send_file @filename, :type => 'text/plain', disposition: "inline", :x_sendfile=> true
+
+    #send_file @filename, :type => 'image/jpg', disposition: "inline", :x_sendfile=> true
 
   end	
 
