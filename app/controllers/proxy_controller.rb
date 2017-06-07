@@ -102,10 +102,10 @@ class ProxyController < ApplicationController
 
   def image_test(blank=nil)
   	@filename = "#{Rails.root}/public/puppy.jpg"
-    render json: @filename, type: :jpg, content_type: 'image/jpg'
+    #render json: @filename, type: :jpg, content_type: 'image/jpg'
   	#send_file Rails.root.join("public", "puppy.jpg"), type: "image/jpg", disposition: "inline"
   	#send_data open(@filename, "rb") { |f| f.read }
-     #send_file @filename, :type => 'image/jpg', :x_sendfile=> true
+    send_file @filename, :type => 'image/jpg', disposition: "inline", :x_sendfile=> true
 
   end	
 
