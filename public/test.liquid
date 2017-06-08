@@ -173,7 +173,7 @@ This is the proxy page for {{ shop.name }}. </br>
 	  dImage.src = URL.createObjectURL(this.response)
 	  document.getElementById("catchDog").appendChild(dImage);
 	  var srcCap = dImage.src;
-	  $('#catchDog').css('background-image', url(srcCap) );
+	  $('#catchDog').css('background-image', 'url(' + srcCap + ')' );
 	}
 	request.open("GET", "https://region-lock.herokuapp.com/proxy/image_test");
 	request.send();
