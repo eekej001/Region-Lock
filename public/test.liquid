@@ -165,13 +165,15 @@ This is the proxy page for {{ shop.name }}. </br>
 
 
 
-    //var dImage = $('#dog');
+    var dImage = $('#catchDog');
     var dImage = new Image;
 	var request = new XMLHttpRequest();
 	request.responseType = "blob";
 	request.onload = function() {
 	  dImage.src = URL.createObjectURL(this.response)
 	  document.getElementById("catchDog").appendChild(dImage);
+	  var srcCap = dImage.src;
+	  $('#catchDog').css('background-image', url(srcCap) );
 	}
 	request.open("GET", "https://region-lock.herokuapp.com/proxy/image_test");
 	request.send();
