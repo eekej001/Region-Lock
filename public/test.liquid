@@ -142,6 +142,8 @@ This is the proxy page for {{ shop.name }}. </br>
   */
 
      
+  //This is the working version but I'm going to try out using Blob'
+/*
      $.ajax({
             url: 'https://region-lock.herokuapp.com/proxy/image_test'
           //url: 'https://region-lock.herokuapp.com/proxy/image_test', 
@@ -158,6 +160,22 @@ This is the proxy page for {{ shop.name }}. </br>
       }).error(function(errorData){
         alert("It didn't work");
       });
+
+*/
+
+
+
+    var dImage = $('#catchDog');
+	var request = new XMLHttpRequest();
+	request.responseType = "blob";
+	request.onload = function() {
+	  dImage.src = URL.createObjectURL(this.response)
+	}
+	request.open("GET", "https://region-lock.herokuapp.com/proxy/image_test");
+	request.send();
+
+
+
 
 
 /*  POST METHOD ATTEMPT AT RETRIEVING PICTURE
