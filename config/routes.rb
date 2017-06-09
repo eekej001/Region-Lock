@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+
   match ':controller(/:action(/:id))', :via => [:get, :post]
   root :to => 'home#index'
   mount ShopifyApp::Engine, at: '/'

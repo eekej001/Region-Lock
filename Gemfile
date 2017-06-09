@@ -8,6 +8,7 @@ gem 'shopify_app'
 gem 'certified'
 gem 'faraday'
 gem 'shopify_cli'
+gem 'dropbox-sdk','~> 1.6.4'
 # Use mysql as the database for Active Record
 
 group :production do

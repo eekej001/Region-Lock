@@ -5,7 +5,7 @@ class ProxyController < ApplicationController
   	#if params[:id]
     #	redirect_to "https://www.emanga.com"
    # else	
-   		 @products = ShopifyAPI::Product.find(:all, params: { limit: 10 })
+   		 #@products = ShopifyAPI::Product.find(:all, params: { limit: 10 })
   #	end
   end
 
@@ -64,6 +64,30 @@ class ProxyController < ApplicationController
 
 
   end
+
+
+
+  def dropbox
+  	require 'dropbox_sdk'
+    
+  	#dbsession = DropboxSession.new(DROPBOX_APP_KEY, DROPBOX_APP_KEY_SECRET)
+  	#client = DropboxClient.new(dbsession, DROPBOX_APP_MODE)
+    
+    #flow = DropboxOAuth2FlowNoRedirect.new(DROPBOX_APP_KEY, DROPBOX_APP_KEY_SECRET) 
+    client = DropboxClient.new(DROPBOX_ACCESS_TOKEN) 
+    @dbImage = client.get_file('/Doujinshi/MG59_000.gif')
+    send_file @dbImage, :type => 'image/gif', disposition: "inline", :x_sendfile=> true
+
+    #@clientinfo = client.account_info()
+
+
+    #/Godzilla/Production/Group%20100/Harlequin%202014/DE-%20A%20Paper%20Marriage/-GIF-1200/MG59_000.gif
+    #/Doujinshi/MG59_000.gif
+    
+
+  	#redirect_to(:action => 'index')
+
+  end	
 
 
 =begin

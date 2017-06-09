@@ -170,7 +170,7 @@ This is the proxy page for {{ shop.name }}. </br>
 	var request = new XMLHttpRequest();
 	request.responseType = "blob";
 	request.onload = function() {
-	  dImage.src = URL.createObjectURL(this.response)
+	  dImage.src = URL.createObjectURL(this.response);
 	  document.getElementById("catchDog").appendChild(dImage);
 	  var srcCap = dImage.src;
 	  $('#catchDog').css('background-image', 'url(' + srcCap + ')' );
@@ -212,7 +212,21 @@ This is the proxy page for {{ shop.name }}. </br>
 
 
 
+  $('.roBut').click( function () {
 
+    //var replaceContainer = $('#appContent');
+    var nImage = new Image;
+	var request = new XMLHttpRequest();
+	request.responseType = "blob";
+	request.onload = function() {
+      $('#appContent').empty();
+	  nImage.src = URL.createObjectURL(this.response);
+	  document.getElementById("appContent").appendChild(nImage);
+	}
+	request.open("GET", "https://region-lock.herokuapp.com/proxy/dropbox");
+	request.send();
+
+  });
 
 
 
