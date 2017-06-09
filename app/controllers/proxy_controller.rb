@@ -76,7 +76,8 @@ class ProxyController < ApplicationController
     #flow = DropboxOAuth2FlowNoRedirect.new(DROPBOX_APP_KEY, DROPBOX_APP_KEY_SECRET) 
     client = DropboxClient.new(DROPBOX_ACCESS_TOKEN) 
     @dbImage = client.get_file('/Doujinshi/MG59_000.gif')
-    send_file @dbImage, :type => 'image/gif', disposition: "inline", :x_sendfile=> true
+    @dbImageR = @dbImage.gsub("\u0000", '')
+    send_file @dbImageR, :type => 'image/gif', disposition: "inline", :x_sendfile=> true
 
     #@clientinfo = client.account_info()
 
