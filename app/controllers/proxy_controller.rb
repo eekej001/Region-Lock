@@ -82,7 +82,7 @@ class ProxyController < ApplicationController
     #send_file @dbImageR, :type => 'image/gif', disposition: "inline", :x_sendfile=> true
     
 
-    send_data @dbImage :type => 'text/plain', disposition: "inline", :x_sendfile=> true
+    send_data @dbImage, :type => 'text/plain', disposition: "inline", :x_sendfile=> true
     #@clientinfo = client.account_info()
 
 
