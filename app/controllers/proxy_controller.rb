@@ -77,7 +77,9 @@ class ProxyController < ApplicationController
     client = DropboxClient.new(DROPBOX_ACCESS_TOKEN) 
     @dbImage = client.get_file('/Doujinshi/MG59_000.gif')
     @dbImageR = @dbImage.gsub("\u0000", '')
-    send_file @dbImageR, :type => 'image/gif', disposition: "inline", :x_sendfile=> true
+    @filename = "#{Rails.root}/public/puppy.jpg"
+    send_file @filename, :type => 'image/gif', disposition: "inline", :x_sendfile=> true
+   #send_file @dbImageR, :type => 'image/gif', disposition: "inline", :x_sendfile=> true
 
     #@clientinfo = client.account_info()
 
