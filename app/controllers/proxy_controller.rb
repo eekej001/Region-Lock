@@ -81,6 +81,7 @@ class ProxyController < ApplicationController
 
     @name_array = []
     @image_array = []
+    @test_array = ["one", "two"]
 
     @dbSearch.each { |name| @name_array.push(name['path'])}
 
@@ -99,7 +100,9 @@ class ProxyController < ApplicationController
     #@image_array_json = @image_array.to_json
 
     #send_data @image_array, :type => 'text/plain', disposition: "inline", :x_sendfile=> true
-    send_data @image_array, :type => 'image/gif', disposition: "inline", :x_sendfile=> true
+    send_data @test_array, :type => 'text/plain', disposition: "inline", :x_sendfile=> true
+
+    #send_data @image_array, :type => 'image/gif', disposition: "inline", :x_sendfile=> true
     #render :json => @image_array_json
 
 

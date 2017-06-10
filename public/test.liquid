@@ -223,21 +223,33 @@ This is the proxy page for {{ shop.name }}. </br>
       console.log(this.response);
       tempRuler = this.response;
       tempRulerL = tempRuler.toString().length;
-      response = this.response.toJSON();
+      //response = this.response.toJSON();
+       
+       alert('Response Length = ' + tempRulerL);
+
+        for(i=0; i<tempRulerL; i++) {
+		  //nImage.src = URL.createObjectURL(this.response[i]);
+		  document.getElementById("appContent").appendChild("<div>" + this.response[i] + "</div>");
+	    };
 
 
-      for(i=0; i<2; i++) {
+
+    /*  for(i=0; i<2; i++) {
           console.log(response[i]);
 		  nImage.src = URL.createObjectURL(response[i]);
 		  document.getElementById("appContent").appendChild(nImage);
 	    };
 
-   /*   for(i=0; i<tempRulerL; i++) {
+	*/    
+
+     /* for(i=0; i<tempRulerL; i++) {
 		  nImage.src = URL.createObjectURL(this.response[i]);
 		  document.getElementById("appContent").appendChild(nImage);
 	    };
 
-   */
+	 */   
+
+   
 
       for (var index in this.response) {
   		// Show value in alert dialog:
