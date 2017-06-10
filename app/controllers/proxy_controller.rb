@@ -69,6 +69,7 @@ class ProxyController < ApplicationController
 
   def dropbox
   	require 'dropbox_sdk'
+  	require 'json'
     
   	#dbsession = DropboxSession.new(DROPBOX_APP_KEY, DROPBOX_APP_KEY_SECRET)
   	#client = DropboxClient.new(dbsession, DROPBOX_APP_MODE)
@@ -84,10 +85,10 @@ class ProxyController < ApplicationController
     @dbSearch.each { |name| @name_array.push(name['path'])}
 
     @name_array.each { |path| @image_array.push(client.get_file(path))}
-    
+    @image_array_json = @image_array.to_json
 
     #send_data @image_array, :type => 'text/plain', disposition: "inline", :x_sendfile=> true
-    render :json => @image_array
+    render :json => @image_array_json
 
 
     #@clientinfo = client.account_info()
