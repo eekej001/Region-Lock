@@ -86,7 +86,7 @@ class ProxyController < ApplicationController
     @name_array.each { |path| @image_array.push(client.get_file(path))}
     
 
-    #send_data @dbImage, :type => 'text/plain', disposition: "inline", :x_sendfile=> true
+    send_data @image_array, :type => 'text/plain', disposition: "inline", :x_sendfile=> true
 
 
     #@clientinfo = client.account_info()
