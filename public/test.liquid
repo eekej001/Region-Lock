@@ -220,15 +220,17 @@ This is the proxy page for {{ shop.name }}. </br>
 	request.responseType = "blob";
 	request.onload = function() {
       $('#appContent').empty();
-      console.dir(this.response);
+      console.log(this.response);
       tempRuler = this.response;
       tempRulerL = tempRuler.toString().length;
 
-      for(i=0; i<tempRulerL; i++) {
+   /*   for(i=0; i<tempRulerL; i++) {
 		  nImage.src = URL.createObjectURL(this.response[i]);
 		  document.getElementById("appContent").appendChild(nImage);
 	  };	  
 	}
+
+   */	
 	request.open("GET", "https://region-lock.herokuapp.com/proxy/dropbox");
 	request.send();
 
