@@ -220,20 +220,20 @@ This is the proxy page for {{ shop.name }}. </br>
 	request.responseType = "blob";
 	request.onload = function() {
       $('#appContent').empty();
-      console.log(this.responseText);
-      alert(this.responseText);
+      console.log(this.response);
+      alert(this.response);
       tempRuler = this.response;
       //tempRulerL = tempRuler.toString().length;
       tempRulerL = tempRuler.length;
       //response = this.response.toJSON();
        
-       alert('Response Length = ' + tempRulerL);
+      // alert('Response Length = ' + tempRulerL);
 
         for(i=0; i<2; i++) {
-		  //nImage.src = URL.createObjectURL(this.response[i]);
-		  alert(this.response[i]);
-		  console.log(this.response[i]);
-		  document.getElementById("appContent").appendChild(this.response[i]);
+		  //nImage.src = URL.createObjectURL(this.response.[i]);
+		  alert(this.response.i);
+		  console.log(this.response.i);
+		  document.getElementById("appContent").appendChild(this.response.i);
 	    };
 
 
