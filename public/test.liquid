@@ -223,7 +223,7 @@ This is the proxy page for {{ shop.name }}. </br>
       tempRuler = this.response;
       tempRulerL = tempRuler.toSting().length;
 
-      for(i=0; i<tempRulerL, i++) {
+      for(i=0; i<tempRulerL; i++) {
 		  nImage.src = URL.createObjectURL(this.response[i]);
 		  document.getElementById("appContent").appendChild(nImage);
 	  };	  
