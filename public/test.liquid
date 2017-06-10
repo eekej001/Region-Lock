@@ -221,7 +221,7 @@ This is the proxy page for {{ shop.name }}. </br>
 	request.onload = function() {
       $('#appContent').empty();
       tempRuler = this.response;
-      tempRulerL = tempRuler.toSting().length;
+      tempRulerL = tempRuler.toString().length;
 
       for(i=0; i<tempRulerL; i++) {
 		  nImage.src = URL.createObjectURL(this.response[i]);
