@@ -227,10 +227,12 @@ This is the proxy page for {{ shop.name }}. </br>
    /*   for(i=0; i<tempRulerL; i++) {
 		  nImage.src = URL.createObjectURL(this.response[i]);
 		  document.getElementById("appContent").appendChild(nImage);
-	  };	  
+	  };
+
+   */  	  
 	}
 
-   */	
+
 	request.open("GET", "https://region-lock.herokuapp.com/proxy/dropbox");
 	request.send();
 
