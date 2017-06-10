@@ -222,14 +222,17 @@ This is the proxy page for {{ shop.name }}. </br>
       $('#appContent').empty();
       console.log(this.response);
       tempRuler = this.response;
-      tempRulerL = tempRuler.toString().length;
+      //tempRulerL = tempRuler.toString().length;
+      tempRulerL = tempRuler.length;
       //response = this.response.toJSON();
        
        alert('Response Length = ' + tempRulerL);
 
         for(i=0; i<tempRulerL; i++) {
 		  //nImage.src = URL.createObjectURL(this.response[i]);
-		  document.getElementById("appContent").appendChild("<div>" + this.response[i] + "</div>");
+		  alert(this.response[i]);
+		  console.log(this.response[i]);
+		  document.getElementById("appContent").appendChild(this.response[i]);
 	    };
 
 
