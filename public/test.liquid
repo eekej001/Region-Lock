@@ -220,7 +220,8 @@ This is the proxy page for {{ shop.name }}. </br>
 	request.responseType = "blob";
 	request.onload = function() {
       $('#appContent').empty();
-      console.log(this.response);
+      console.log(this.responseText);
+      alert(this.responseText);
       tempRuler = this.response;
       //tempRulerL = tempRuler.toString().length;
       tempRulerL = tempRuler.length;
