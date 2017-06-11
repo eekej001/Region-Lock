@@ -271,7 +271,7 @@ This is the proxy page for {{ shop.name }}. </br>
 	request.open("GET", "https://region-lock.herokuapp.com/proxy/dropbox_count");
 	request.send();
 
-	alert(counter);
+	alert("Counter: " + counter);
 
 	for (i=0; i<counter; i++) {
 	    params = "pId=" + i;
