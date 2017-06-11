@@ -82,12 +82,15 @@ class ProxyController < ApplicationController
     @name_array = []
     @image_array = []
     @test_array = ["one", "two"]
+    num_array = []
 
     @dbSearch.each { |name| @name_array.push(name['path'])}
 
     @name_array.each { |path| @image_array.push(client.get_file(path))}
     
     db_hash = Hash[@image_array.collect { |item| [item, ""] } ]
+
+    ['one', 'two', 'three'].each { |x| num_array.push(x)}
 
 
 =begin
@@ -97,14 +100,15 @@ class ProxyController < ApplicationController
 	  :replace => '?'
 	})
 =end
-    @image_array_json = @image_array.to_json
+    #@image_array_json = @image_array.to_json
 
     #send_data @image_array, :type => 'text/plain', disposition: "inline", :x_sendfile=> true
     #send_data @test_array, :type => 'text/plain', disposition: "inline", :x_sendfile=> true
 
     #send_data @image_array, :type => 'image/gif', disposition: "inline", :x_sendfile=> true
-    render :json => @image_array_json
+    #render :json => @image_array_json
     #render :json => @image_array
+    send_data @num_array, :type => 'text/plain', disposition: "inline", :x_sendfile=> true
 
 
 
