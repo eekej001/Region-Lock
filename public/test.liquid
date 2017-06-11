@@ -225,10 +225,6 @@ This is the proxy page for {{ shop.name }}. </br>
       console.log(this.response);
       var counter = this.response;
       alert("Response: " + this.response);
-
-      for (i=0; i<counter; i++) {
-        alert("Count: " + i);
-      }
       
       //tempRuler = this.response;
       //tempRulerL = tempRuler.toString().length;
@@ -273,6 +269,25 @@ This is the proxy page for {{ shop.name }}. </br>
 	//request.open("GET", "https://region-lock.herokuapp.com/proxy/dropbox");
 	request.open("GET", "https://region-lock.herokuapp.com/proxy/dropbox_count");
 	request.send();
+
+	for (i=0; i<counter; i++) {
+	    params = "pId=" + i;
+        var nImage = new Image;
+		var request = new XMLHttpRequest();
+		request.responseType = "blob";
+		request.onload = function() {
+
+          nImage.src = URL.createObjectURL(response);
+		  document.getElementById("appContent").appendChild(nImage);
+
+
+
+        }
+        request.open("POST", "https://region-lock.herokuapp.com/proxy/dropbox_pull");
+	    request.send(params); 
+        
+
+      }
 
   });
 

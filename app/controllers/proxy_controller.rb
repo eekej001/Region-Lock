@@ -128,7 +128,43 @@ class ProxyController < ApplicationController
     
 
 
-  end	
+  end
+
+
+
+
+
+
+
+  def dropbox_pull
+  	require 'dropbox_sdk'
+  	require 'json'
+
+    pID = params[:pID]
+    client = DropboxClient.new(DROPBOX_ACCESS_TOKEN) 
+    @dbSearch = client.search('/Doujinshi', '.')
+    @dbIndivObj = @dbSearch[pID]
+    @dbImage = client.get_file(@dbIndivObj['path'])
+
+    
+  
+
+
+    send_data @dbImage, :type => 'image/gif', disposition: "inline", :x_sendfile=> true
+
+  end
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 =begin
