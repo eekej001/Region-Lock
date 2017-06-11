@@ -70,7 +70,7 @@ class ProxyController < ApplicationController
     client = DropboxClient.new(DROPBOX_ACCESS_TOKEN) 
     dbSearch = client.search('/Doujinshi', '.')
     @count = dbSearch.length
-
+    send_data @count, :type => 'text/plain', disposition: "inline", :x_sendfile=> true
   end	
 
 
