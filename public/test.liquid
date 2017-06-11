@@ -223,6 +223,11 @@ This is the proxy page for {{ shop.name }}. </br>
 	request.onload = function() {
       $('#appContent').empty();
       console.log(this.response);
+      var counter = this.response;
+
+      for (i=1; i<counter; i++) {
+        alert("Count: " + i);
+      }
       alert(this.response);
       //tempRuler = this.response;
       //tempRulerL = tempRuler.toString().length;
