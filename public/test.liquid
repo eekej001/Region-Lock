@@ -213,7 +213,7 @@ This is the proxy page for {{ shop.name }}. </br>
 
 
   $('.roBut').click( function () {
-    $('#appContent').empty();
+
     //var replaceContainer = $('#appContent');
     var nImage = new Image;
 	var request = new XMLHttpRequest();
@@ -222,7 +222,7 @@ This is the proxy page for {{ shop.name }}. </br>
 	//request.responseType = "json";
 	request.responseType = "text";
 	request.onload = function() {
-      
+      $('#appContent').empty();
       console.log(this.response);
       var counter = this.response;
       alert("Response: " + this.response);
@@ -278,7 +278,7 @@ This is the proxy page for {{ shop.name }}. </br>
 		request.onload = function() {
 
           nImage.src = URL.createObjectURL(this.response);
-		  document.getElementById("appContent").appendChild(nImage);
+		  document.getElementById("appContent").append(nImage);
 
 
 
