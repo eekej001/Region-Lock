@@ -218,7 +218,8 @@ This is the proxy page for {{ shop.name }}. </br>
     var nImage = new Image;
 	var request = new XMLHttpRequest();
 	//request.responseType = "blob";
-	request.responseType = "json";
+	//request.responseType = "json";
+	request.responseType = "text";
 	request.onload = function() {
       $('#appContent').empty();
       console.log(this.response);
