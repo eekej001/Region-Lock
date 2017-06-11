@@ -140,7 +140,7 @@ class ProxyController < ApplicationController
   	require 'dropbox_sdk'
   	require 'json'
 
-    pID = params[:pID]
+    pID = params[:pID].to_i
     client = DropboxClient.new(DROPBOX_ACCESS_TOKEN) 
     @dbSearch = client.search('/Doujinshi', '.')
     @dbIndivObj = @dbSearch[pID]
