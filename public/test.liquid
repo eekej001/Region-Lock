@@ -223,14 +223,14 @@ This is the proxy page for {{ shop.name }}. </br>
       $('#appContent').empty();
       console.log(this.response);
       alert(this.response);
-      tempRuler = this.response;
+      //tempRuler = this.response;
       //tempRulerL = tempRuler.toString().length;
-      tempRulerL = tempRuler.length;
+      //tempRulerL = tempRuler.length;
       //response = this.response.toJSON();
        
       // alert('Response Length = ' + tempRulerL);
 
-        for(i=0; i<2; i++) {
+      /*  for(i=0; i<2; i++) {
 		  //nImage.src = URL.createObjectURL(this.response.[i]);
 		  //alert(this.response[0]);
 		  alert("Response dot 0 " + this.response[0]);
@@ -239,7 +239,7 @@ This is the proxy page for {{ shop.name }}. </br>
 		  document.getElementById("appContent").innerHTML(this.response[0]);
 	    };
 
-
+     */
 
     /*  for(i=0; i<2; i++) {
           console.log(response[i]);
@@ -258,17 +258,13 @@ This is the proxy page for {{ shop.name }}. </br>
 
    
 
-      for (var index in this.response) {
-  		// Show value in alert dialog:
-  		alert( this.response[index] );
-	  }
-
 
 
 	}
 
 
-	request.open("GET", "https://region-lock.herokuapp.com/proxy/dropbox");
+	//request.open("GET", "https://region-lock.herokuapp.com/proxy/dropbox");
+	request.open("GET", "https://region-lock.herokuapp.com/proxy/dropbox_count");
 	request.send();
 
   });

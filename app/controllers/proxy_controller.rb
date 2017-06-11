@@ -65,6 +65,14 @@ class ProxyController < ApplicationController
 
   end
 
+  def dropbox_count
+    require 'dropbox_sdk'
+    client = DropboxClient.new(DROPBOX_ACCESS_TOKEN) 
+    dbSearch = client.search('/Doujinshi', '.')
+    @count = dbSearch.length
+
+  end	
+
 
 
   def dropbox
