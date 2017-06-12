@@ -278,7 +278,8 @@ This is the proxy page for {{ shop.name }}. </br>
 		request.onload = function() {
 
           nImage.src = URL.createObjectURL(this.response);
-		  document.getElementById("appContent").append(nImage);
+		  //document.getElementById("appContent").append(nImage);
+		  $("div#appContent:last-child").append(nImage);
 
 
 
