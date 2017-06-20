@@ -284,11 +284,14 @@ This is the proxy page for {{ shop.name }}. </br>
 		/*  var OL = document.createElement("OL");
 		  $("#appContent").append(OL);
 		  OL.append(nImage);   */
-		  var D = document.createElement("DIV");
+		/*  var D = document.createElement("DIV");
 		  $("#appContent").append(D);
 		  var AC = $("#appContent");
 		  AC.insertBefore(nImage);
+        */
 
+          var ACL = document.getElementById("appContent").lastChild;
+          ACL.append(nImage);
 
 		  //$("body:last-child").append(nImage);
 
