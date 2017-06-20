@@ -281,7 +281,7 @@ This is the proxy page for {{ shop.name }}. </br>
           nImage.src = URL.createObjectURL(this.response);
 		  //document.getElementById("appContent").append(nImage);
 		  // $("#appContent").append(nImage);
-		  var OL = document.CreateElement("OL")
+		  var OL = document.createElement("OL");
 		  $("#appContent").append(OL);
 		  OL.append(nImage);
 
