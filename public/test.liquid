@@ -280,7 +280,7 @@ This is the proxy page for {{ shop.name }}. </br>
 		var request = new XMLHttpRequest();
 		request.responseType = "blob";
 		request.onload = function() {
-
+          alert(i);
           nImage.src = URL.createObjectURL(this.response);
 		  //document.getElementById("appContent").append(nImage);
 		  // $("#appContent").append(nImage);
