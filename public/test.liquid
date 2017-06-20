@@ -281,9 +281,14 @@ This is the proxy page for {{ shop.name }}. </br>
           nImage.src = URL.createObjectURL(this.response);
 		  //document.getElementById("appContent").append(nImage);
 		  // $("#appContent").append(nImage);
-		  var OL = document.createElement("OL");
+		/*  var OL = document.createElement("OL");
 		  $("#appContent").append(OL);
-		  OL.append(nImage);
+		  OL.append(nImage);   */
+		  var D = document.createElement("DIV");
+		  $("#appContent").append(D);
+		  var AC = $("#appContent");
+		  AC.insertBefore(nImage, AC.childNodes[0]);
+
 
 		  //$("body:last-child").append(nImage);
 
