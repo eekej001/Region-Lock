@@ -274,13 +274,14 @@ This is the proxy page for {{ shop.name }}. </br>
 
 
 	for (i=0; i<counter; i++) {
+	alert("I = " + i);
 	    var params = new FormData();
         params.append('pID', i);
         var nImage = new Image;
 		var request = new XMLHttpRequest();
 		request.responseType = "blob";
 		request.onload = function() {
-          alert("I = " + i);
+          //alert("I = " + i);
           alert ("Response: " + this.response);
           nImage.src = URL.createObjectURL(this.response);
 		  //document.getElementById("appContent").append(nImage);
