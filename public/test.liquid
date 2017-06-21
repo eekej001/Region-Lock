@@ -298,13 +298,8 @@ This is the proxy page for {{ shop.name }}. </br>
         //  var ACL = document.getElementById("appContent").lastChild;
         //  ACL.append(nImage);
 
-
-        if(i>0) {
-	     setTimeout(function(){ $("#appContent").append(nImage); }, 8000)
-        }
-        else {
           $("#appContent").append(nImage);
-        }
+        
 
 
          // alert("Append Done");
@@ -314,15 +309,19 @@ This is the proxy page for {{ shop.name }}. </br>
 
 
         }
-        request.open("POST", "https://region-lock.herokuapp.com/proxy/dropbox_pull");
-        request.send(params);
-	   /* if(i>0) {
-	     setTimeout(function(){ request.send(params); }, 8000); 
+       // request.open("POST", "https://region-lock.herokuapp.com/proxy/dropbox_pull");
+       // request.send(params);
+	    if(i>0) {
+	     setTimeout(function(){ 
+           request.open("POST", "https://region-lock.herokuapp.com/proxy/dropbox_pull");
+	       request.send(params); 
+	     }, 8000); 
 	    }
         else {
+          request.open("POST", "https://region-lock.herokuapp.com/proxy/dropbox_pull"); 
           request.send(params);
         } 
-       */
+       
 
       }
 
