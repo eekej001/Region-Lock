@@ -287,12 +287,14 @@ This is the proxy page for {{ shop.name }}. </br>
 		request.onload = function() {
           nImage.src = URL.createObjectURL(this.response);
           $("#appContent").append(nImage);	
-          i++;		  
+          i++;	
+
+          if(i > 0 && i < counter) {
+		   iStream();
+	      }	  
 	    }
 	   
-	   if(i > 0 && i < counter) {
-		   iStream();
-	   }
+	   
 	 
 	 }
 	
