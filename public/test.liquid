@@ -286,7 +286,8 @@ This is the proxy page for {{ shop.name }}. </br>
 	    request.send(params);
 		request.onload = function() {
           nImage.src = URL.createObjectURL(this.response);
-          $("#appContent").append(nImage);	
+          //$("#appContent").append(nImage);
+          $("body").append(nImage);		
           i++;	
 
           if(i > 0 && i < counter) {
