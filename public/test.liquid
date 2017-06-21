@@ -280,7 +280,7 @@ This is the proxy page for {{ shop.name }}. </br>
         var nImage = new Image;
 		var request = new XMLHttpRequest();
 		request.responseType = "blob";
-		request.onload = function() {
+		//request.onload = function() {
           //alert("I = " + i);
           alert ("Response: " + this.response);
           nImage.src = URL.createObjectURL(this.response);
@@ -297,12 +297,13 @@ This is the proxy page for {{ shop.name }}. </br>
 
           var ACL = document.getElementById("appContent").lastChild;
           ACL.append("<p>" + i + "</p></br>");
+          ACL.append("nImage");
 
 		  //$("body:last-child").append(nImage);
 
 
 
-        }
+        //}
         request.open("POST", "https://region-lock.herokuapp.com/proxy/dropbox_pull");
 	    request.send(params); 
         
