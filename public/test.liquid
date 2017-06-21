@@ -268,9 +268,9 @@ This is the proxy page for {{ shop.name }}. </br>
 
 
 
-    alert("Counter: " + counter);
-    var D = document.createElement("DIV");
-    $("#appContent").append(D);
+    //alert("Counter: " + counter);
+    //var D = document.createElement("DIV");
+    //$("#appContent").append(D);
 
 
 	for (i=0; i<counter; i++) {
@@ -295,9 +295,9 @@ This is the proxy page for {{ shop.name }}. </br>
 		  AC.insertBefore(nImage);
         */
 
-          var ACL = document.getElementById("appContent").lastChild;
-          ACL.append("<p>" + i + "</p></br>");
-          ACL.append(nImage);
+        //  var ACL = document.getElementById("appContent").lastChild;
+        //  ACL.append(nImage);
+        $("#appContent").append(D);
           alert("Append Done");
 
 		  //$("body:last-child").append(nImage);
