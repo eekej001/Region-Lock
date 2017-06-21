@@ -273,57 +273,30 @@ This is the proxy page for {{ shop.name }}. </br>
     //$("#appContent").append(D);
 
 
-	for (i=0; i<counter; i++) {
-	//alert("I = " + i);
-	    var params = new FormData();
+	var i = 0;
+	  
+	  function iStream () {
+		  
+		var params = new FormData();
         params.append('pID', i);
         var nImage = new Image;
 		var request = new XMLHttpRequest();
 		request.responseType = "blob";
+		request.open("POST", "https://region-lock.herokuapp.com/proxy/dropbox_pull");
+	    request.send();
 		request.onload = function() {
-          //alert("I = " + i);
-          //alert ("Response: " + this.response);
           nImage.src = URL.createObjectURL(this.response);
-		  //document.getElementById("appContent").append(nImage);
-		  // $("#appContent").append(nImage);
-		/*  var OL = document.createElement("OL");
-		  $("#appContent").append(OL);
-		  OL.append(nImage);   */
-		/*  var D = document.createElement("DIV");
-		  $("#appContent").append(D);
-		  var AC = $("#appContent");
-		  AC.insertBefore(nImage);
-        */
-
-        //  var ACL = document.getElementById("appContent").lastChild;
-        //  ACL.append(nImage);
-
-          $("#appContent").append(nImage);
-        
-
-
-         // alert("Append Done");
-
-		  //$("body:last-child").append(nImage);
-
-
-
-        }
-       // request.open("POST", "https://region-lock.herokuapp.com/proxy/dropbox_pull");
-       // request.send(params);
-	    if(i>0) {
-	     setTimeout(function(){ 
-           request.open("POST", "https://region-lock.herokuapp.com/proxy/dropbox_pull");
-	       request.send(params); 
-	     }, 8000); 
+          $("#appContent").append(nImage);	
+          i++;		  
 	    }
-        else {
-          request.open("POST", "https://region-lock.herokuapp.com/proxy/dropbox_pull"); 
-          request.send(params);
-        } 
-       
-
-      }
+	   
+	   if(i > 0 && i < counter) {
+		   iStream();
+	   }
+	 
+	 }
+	
+	  iStream();
 
 
 	}
