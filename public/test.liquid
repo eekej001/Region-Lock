@@ -223,7 +223,8 @@ This is the proxy page for {{ shop.name }}. </br>
 	//request.responseType = "json";
 	request.responseType = "text";
 	request.onload = function() {
-      $('#appContent').empty();
+      //$('#appContent').empty();
+      $('body').empty();
       console.log(this.response);
       var counter = this.response;
       //alert("Response: " + this.response);
