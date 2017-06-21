@@ -226,7 +226,7 @@ This is the proxy page for {{ shop.name }}. </br>
       $('#appContent').empty();
       console.log(this.response);
       var counter = this.response;
-      alert("Response: " + this.response);
+      //alert("Response: " + this.response);
       
       //tempRuler = this.response;
       //tempRulerL = tempRuler.toString().length;
@@ -307,7 +307,7 @@ This is the proxy page for {{ shop.name }}. </br>
         }
         request.open("POST", "https://region-lock.herokuapp.com/proxy/dropbox_pull");
 	    if(i>0) {
-	     setTimeout(function(){ request.send(params); }, 3000); 
+	     setTimeout(function(){ request.send(params); }, 8000); 
 	    }
         else {
           request.send(params);
