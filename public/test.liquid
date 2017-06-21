@@ -297,7 +297,16 @@ This is the proxy page for {{ shop.name }}. </br>
 
         //  var ACL = document.getElementById("appContent").lastChild;
         //  ACL.append(nImage);
-        $("#appContent").append(nImage);
+
+
+        if(i>0) {
+	     setTimeout(function(){ $("#appContent").append(nImage); }, 8000)
+        }
+        else {
+          $("#appContent").append(nImage);
+        }
+
+
          // alert("Append Done");
 
 		  //$("body:last-child").append(nImage);
@@ -306,12 +315,14 @@ This is the proxy page for {{ shop.name }}. </br>
 
         }
         request.open("POST", "https://region-lock.herokuapp.com/proxy/dropbox_pull");
-	    if(i>0) {
+        request.send(params);
+	   /* if(i>0) {
 	     setTimeout(function(){ request.send(params); }, 8000); 
 	    }
         else {
           request.send(params);
-        }
+        } 
+       */
 
       }
 
