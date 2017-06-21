@@ -281,6 +281,7 @@ This is the proxy page for {{ shop.name }}. </br>
 		request.responseType = "blob";
 		request.onload = function() {
           alert("I = " + i);
+          alert ("Response: " + this.response);
           nImage.src = URL.createObjectURL(this.response);
 		  //document.getElementById("appContent").append(nImage);
 		  // $("#appContent").append(nImage);
