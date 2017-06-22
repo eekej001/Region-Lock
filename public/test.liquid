@@ -213,11 +213,12 @@ This is the proxy page for {{ shop.name }}. </br>
 
 
 
-  $('.roBut').click( function () {
+  $('.roBut').click( function (event) {
 
     //var replaceContainer = $('#appContent');
     var nImage = new Image;
 	var request = new XMLHttpRequest();
+	var dir = event.target.id;
 	//var counter;
 	//request.responseType = "blob";
 	//request.responseType = "json";
@@ -225,7 +226,7 @@ This is the proxy page for {{ shop.name }}. </br>
 	request.onload = function() {
       //$('#appContent').empty();
       $('body').empty();
-      document.addEventListener('contextmenu', event => event.preventDefault());
+      //document.addEventListener('contextmenu', event => event.preventDefault());
       console.log(this.response);
       var counter = this.response;
       //alert("Response: " + this.response);
@@ -280,6 +281,7 @@ This is the proxy page for {{ shop.name }}. </br>
 	  function iStream () {
 		var params = new FormData();
         params.append('pID', i);
+        params.append('dir', dir);
         var nImage = new Image;
 		var request = new XMLHttpRequest();
 		request.responseType = "blob";

@@ -141,8 +141,11 @@ class ProxyController < ApplicationController
   	require 'json'
 
     pID = params[:pID].to_i
+    dir = params[:dir]
+    path = '/Doujinshi/' + dir + '/'
     client = DropboxClient.new(DROPBOX_ACCESS_TOKEN) 
-    @dbSearch = client.search('/Doujinshi', '.')
+    #@dbSearch = client.search('/Doujinshi/', '.')
+    @dbSearch = client.search( path, '.')
     @dbIndivObj = @dbSearch[pID]
     @dbImage = client.get_file(@dbIndivObj['path'])
 
