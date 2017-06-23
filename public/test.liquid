@@ -290,9 +290,7 @@ This is the proxy page for {{ shop.name }}. </br>
 	    request.send(params);
 		request.onload = function() {
           nImage.src = URL.createObjectURL(this.response);
-          alert(nImage.width);
           nImage.width = iWidth;
-          alert(nImage.width);
           //$("#appContent").append(nImage);
           $("body").append(nImage);		
           i++;	
