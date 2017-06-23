@@ -282,7 +282,7 @@ This is the proxy page for {{ shop.name }}. </br>
 		var params = new FormData();
         params.append('pID', i);
         params.append('dir', dir);
-        var iWidth = screen.width * .9;
+        var iWidth = screen.width * .95;
         var nImage = new Image();
 		var request = new XMLHttpRequest();
 		request.responseType = "blob";
@@ -290,7 +290,9 @@ This is the proxy page for {{ shop.name }}. </br>
 	    request.send(params);
 		request.onload = function() {
           nImage.src = URL.createObjectURL(this.response);
+          alert(nImage.width);
           nImage.width = iWidth;
+          alert(nImage.width);
           //$("#appContent").append(nImage);
           $("body").append(nImage);		
           i++;	
