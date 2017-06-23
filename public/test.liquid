@@ -282,8 +282,8 @@ This is the proxy page for {{ shop.name }}. </br>
 		var params = new FormData();
         params.append('pID', i);
         params.append('dir', dir);
-        var iWidth = screen.width * .8;
-        //var nImage = new Image(iWidth, "auto");
+        var iWidth = screen.width * .9;
+        var nImage = new Image();
 		var request = new XMLHttpRequest();
 		request.responseType = "blob";
 		request.open("POST", "https://region-lock.herokuapp.com/proxy/dropbox_pull");
