@@ -228,7 +228,7 @@ This is the proxy page for {{ shop.name }}. </br>
 	request.onload = function() {
       //$('#appContent').empty();
       $('body').empty();
-
+    $('img').on('dragstart', function(event) { event.preventDefault(); });
     var spinnerS = {
       spinBox: $('<div />', { class: 'spinnerS'}),
       container: $('body')
