@@ -1,6 +1,7 @@
 <div id="appContent">
 {% if customer %}
 </br></br>
+<div id="spinnerCatch"></div>
 
 This customer is logged in. </br></br>
 
@@ -20,7 +21,8 @@ This is the proxy page for {{ shop.name }}. </br>
 
     var spinner = {
         spinBox: $('<div />', { class: 'spinner'}),
-        container: $('#appContent')
+        //container: $('#appContent')
+        container: $('#spinnerCatch')
     }
 
       $.ajax({
@@ -507,7 +509,7 @@ List of products in the store: </br></br>
    .spinner {
      position: absolute;
      top: 5%;
-     left: 15%;
+     left: 12%;
      width: 30%;
      height: 30%;
      background:rgba(255, 255, 255, .1) url('https://i.giphy.com/3oEjI6SIIHBdRxXI40.gif') no-repeat 50%;
