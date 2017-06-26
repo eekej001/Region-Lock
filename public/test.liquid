@@ -295,6 +295,15 @@ This is the proxy page for {{ shop.name }}. </br>
           $("body").append(nImage);	
           alert("Height: " + nImage.height);
           alert("Width: " + nImage.width);	
+
+          
+          $(window).load(function () {
+			    alert("Window Height: " + nImage.height);
+                alert("Window Width: " + nImage.width);	
+		  });
+
+
+
           i++;	
 
           if(i > 0 && i < counter) {
