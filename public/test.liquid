@@ -292,8 +292,13 @@ This is the proxy page for {{ shop.name }}. </br>
           nImage.src = URL.createObjectURL(this.response);
 
           nImage.onload = function () {
-          alert("Height: " + this.height);
-          alert("Width: " + this.width);	
+          nWidth = this.width;
+          nHeight = this.height;
+          nRatio = nHeight/nWidth;
+          nImage.width = iWidth;
+          nImage.height = iWidth * nRatio;
+          //alert("Height: " + this.height);
+          //alert("Width: " + this.width);	
 
           }
 
