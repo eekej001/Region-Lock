@@ -13,6 +13,7 @@ This is the proxy page for {{ shop.name }}. </br>
     $(document).ready(function() {
     //alert('This is the beginning');
     $('.productSection').hide();
+    $('img').on('dragstart', function(event) { event.preventDefault(); });
     var formData = new FormData();
     formData.append('username', 'Test');
     //var formData = {'username': $('input[name=IT3]').val()};
@@ -228,7 +229,7 @@ This is the proxy page for {{ shop.name }}. </br>
 	request.onload = function() {
       //$('#appContent').empty();
       $('body').empty();
-    $('img').on('dragstart', function(event) { event.preventDefault(); });
+
     var spinnerS = {
       spinBox: $('<div />', { class: 'spinnerS'}),
       container: $('body')
