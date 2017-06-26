@@ -229,9 +229,9 @@ This is the proxy page for {{ shop.name }}. </br>
       //$('#appContent').empty();
       $('body').empty();
 
-      var spinnerS = {
-        spinBox: $('<div />', { class: 'spinner'}),
-        container: $('body')
+    var spinnerS = {
+      spinBox: $('<div />', { class: 'spinnerS'}),
+      container: $('body')
     }
     spinnerS.container.append(spinnerS.spinBox);
 
@@ -301,7 +301,7 @@ This is the proxy page for {{ shop.name }}. </br>
 	    request.send(params);
 		request.onload = function() {
 		if( i == 0) {
-		   spinner.container.find(spinner.spinBox).remove();
+		   spinnerS.container.find(spinnerS.spinBox).remove();
 		}
           nImage.src = URL.createObjectURL(this.response);
 
@@ -519,6 +519,17 @@ List of products in the store: </br></br>
    .spinner {
      position: absolute;
      top: -4%;
+     left: 35%;
+     width: 30%;
+     height: 30%;
+       
+     background: url('http://i1269.photobucket.com/albums/jj591/aditya9172/loaing2.gif') no-repeat 50%;
+   
+   }
+
+   .spinnerS {
+     position: absolute;
+     top: 15%;
      left: 35%;
      width: 30%;
      height: 30%;
