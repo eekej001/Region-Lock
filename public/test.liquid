@@ -228,6 +228,13 @@ This is the proxy page for {{ shop.name }}. </br>
 	request.onload = function() {
       //$('#appContent').empty();
       $('body').empty();
+
+      var spinnerS = {
+        spinBox: $('<div />', { class: 'spinner'}),
+        container: $('body')
+    }
+    spinnerS.container.append(spinnerS.spinBox);
+
       $('body').css({"background-color": "black", "margin-left": "1.5%"});
 
       //document.addEventListener('contextmenu', event => event.preventDefault());
@@ -293,6 +300,9 @@ This is the proxy page for {{ shop.name }}. </br>
 		request.open("POST", "https://region-lock.herokuapp.com/proxy/dropbox_pull");
 	    request.send(params);
 		request.onload = function() {
+		if( i == 0) {
+		   spinner.container.find(spinner.spinBox).remove();
+		}
           nImage.src = URL.createObjectURL(this.response);
 
           nImage.onload = function () {
@@ -509,7 +519,7 @@ List of products in the store: </br></br>
    .spinner {
      position: absolute;
      top: 5%;
-     left: 12%;
+     left: 25%;
      width: 30%;
      height: 30%;
        
