@@ -230,6 +230,10 @@ This is the proxy page for {{ shop.name }}. </br>
       //$('#appContent').empty();
       $('body').empty();
 
+      $(document).ready(function() {
+         $('img').on('dragstart', function(event) { event.preventDefault(); });
+      });
+
     var spinnerS = {
       spinBox: $('<div />', { class: 'spinnerS'}),
       container: $('body')
