@@ -290,17 +290,13 @@ This is the proxy page for {{ shop.name }}. </br>
 	    request.send(params);
 		request.onload = function() {
           nImage.src = URL.createObjectURL(this.response);
+          alert("Height: " + this.height);
+          alert("Width: " + this.width);	
           //nImage.width = iWidth;
           //$("#appContent").append(nImage);
           $("body").append(nImage);	
-          alert("Height: " + nImage.height);
-          alert("Width: " + nImage.width);	
-
           
-          $(window).load(function () {
-			    alert("Window Height: " + nImage.height);
-                alert("Window Width: " + nImage.width);	
-		  });
+
 
 
 
