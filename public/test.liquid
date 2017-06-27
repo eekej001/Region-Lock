@@ -12,6 +12,11 @@ This is the proxy page for {{ shop.name }}. </br>
    // alert('This is before the jQuery');
     $(document).ready(function() {
     //alert('This is the beginning');
+
+    $("img").mousedown(function(){
+       return false;
+    });
+
     $('.productSection').hide();
    // $('img').on('dragstart', function(event) { event.preventDefault(); });
     var formData = new FormData();
