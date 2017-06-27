@@ -13,10 +13,7 @@ This is the proxy page for {{ shop.name }}. </br>
     $(document).ready(function() {
     //alert('This is the beginning');
 
-    $("img").mousedown(function(){
-       return false;
-    });
-
+    
 
 
    window.ondragstart = function() { return false; } 
@@ -264,7 +261,7 @@ This is the proxy page for {{ shop.name }}. </br>
 
       $('body').css({"background-color": "black", "margin-left": "4%"});
 
-      //document.addEventListener('contextmenu', event => event.preventDefault());
+      document.addEventListener('contextmenu', event => event.preventDefault());
       console.log(this.response);
       var counter = this.response;
       //alert("Response: " + this.response);
