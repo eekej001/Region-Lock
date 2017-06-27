@@ -17,6 +17,12 @@ This is the proxy page for {{ shop.name }}. </br>
        return false;
     });
 
+
+
+   window.ondragstart = function() { return false; } 
+
+
+
     $('.productSection').hide();
    // $('img').on('dragstart', function(event) { event.preventDefault(); });
     var formData = new FormData();
