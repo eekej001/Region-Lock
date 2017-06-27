@@ -234,7 +234,8 @@ This is the proxy page for {{ shop.name }}. </br>
     $(function () {
       $('<script>')
       .attr('type', 'text/javascript')
-      .text("$('img').on('dragstart', function(event) { event.preventDefault(); });")
+      //.text("$('img').on('dragstart', function(event) { event.preventDefault(); });")
+      .text("alert('Hi')")
       .appendTo('head');
    })
 
