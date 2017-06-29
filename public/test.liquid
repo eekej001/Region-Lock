@@ -238,6 +238,14 @@ This is the proxy page for {{ shop.name }}. </br>
       //$('#appContent').empty();
       $('body').empty();
 
+      var backB = document.createElement('a');
+      var backBtext = document.createTextNode('Back to Library');
+      backB.appendChild(backBtext);
+      backB.title = "Back to Library";
+      backB.href = "https://projecthentai.com";
+      backB.setAttribute('class', 'backB');
+      document.body.appendChild(backB);
+
    
     $(function () {
       $('<script>')
@@ -549,6 +557,10 @@ List of products in the store: </br></br>
        
      background: url('http://i1269.photobucket.com/albums/jj591/aditya9172/loaing2.gif') no-repeat 50%;
    
+   }
+
+   .backB {
+     font-color: red;
    }
 
 
