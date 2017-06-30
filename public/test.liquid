@@ -242,9 +242,10 @@ This is the proxy page for {{ shop.name }}. </br>
       var backBtext = document.createTextNode('Back to Library');
       backB.appendChild(backBtext);
       backB.title = "Back to Library";
-      backB.href = "https://projecthentai.com";
+      backB.href = "https://projecthentai.com/apps/proxy";
       backB.setAttribute('class', 'backB');
       document.body.appendChild(backB);
+      $('.backB').css({"color": "red", "font-size": "14px", "font-family": "Open Sans" });
 
    
     $(function () {
