@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170503213735) do
+ActiveRecord::Schema.define(version: 20170706202559) do
+
+  create_table "doujinshis", force: :cascade do |t|
+    t.string   "title",      limit: 50, null: false
+    t.string   "handle",     limit: 50, null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+  end
 
   create_table "forms", force: :cascade do |t|
     t.datetime "created_at", null: false
