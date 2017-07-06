@@ -53,7 +53,7 @@ class HomeController < ShopifyApp::AuthenticatedController
 
   def d_create
     @douj = Doujinshi.new(douj_params)
-    if @form.save
+    if @douj.save
       flash[:notice] = "Doujinshi Title Added"
       redirect_to(:action => 'index')
     else
