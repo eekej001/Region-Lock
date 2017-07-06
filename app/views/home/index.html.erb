@@ -26,6 +26,14 @@
   <% end %>
 </ul>
 
+<br>
+
+<ul>
+  <% @doujinshis.each do |doujinshi| %>
+    <li><%= doujinshi.title %> - <%= doujinshi.handle %></li>
+  <% end %>
+</ul>
+
 
 <div>
   <%= form_for(:form, :url => {:action => 'create'}) do |f| %>
@@ -45,3 +53,26 @@
   </table>
   <% end %>
 </div> 
+
+
+<br>
+<h1>Add a Doujinshi Title</h1>
+
+<div>
+  <%= form_for(:form, :url => {:action => 'd_create'}) do |f| %>
+  <table>
+    <tr>
+      <td><%= f.label(:title, "Title") %></td>
+      <td><%= f.text_field(:title) %></td>
+    </tr>
+    <tr>
+      <td><%= f.label(:handle, "Product Handle") %></td>
+      <td><%= f.text_field(:handle) %></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td><%= submit_tag("Submit") %></td>
+    </tr>
+  </table>
+  <% end %> 
+</div>
