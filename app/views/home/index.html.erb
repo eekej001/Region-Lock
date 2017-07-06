@@ -28,14 +28,6 @@
 
 <br>
 
-<h2>Doujinshi Titles</h2>
-
-<ul>
-  <% @doujinshis.each do |doujinshi| %>
-    <li><%= doujinshi.title %> - <%= doujinshi.handle %></li>
-  <% end %>
-</ul>
-
 
 <div>
   <%= form_for(:form, :url => {:action => 'create'}) do |f| %>
@@ -56,7 +48,20 @@
   <% end %>
 </div> 
 
+<br>
 
+<h2>Doujinshi Titles</h2>
+
+<ul>
+  <% @doujinshis.each do |doujinshi| %>
+    <li><%= doujinshi.title %> - <%= doujinshi.handle %></li>
+  <% end %>
+</ul>
+
+
+
+
+<br>
 <br>
 <h1>Add a Doujinshi Title</h1>
 
