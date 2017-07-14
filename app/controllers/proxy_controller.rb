@@ -223,18 +223,21 @@ class ProxyController < ApplicationController
   	ln = webhook_json["billing_address"]["last_name"]
   	Form.create(:first_name => "#{fn}", :last_name => "#{ln}")
 =end
+
+=begin
      @douj_titles = Doujinshi.all
      title_array = []
     
 
      #line_items = webhook_json["line_items"]
 	  for each a in douj_titles  
-	    #for each p in line_items
-	    #   if p.title = a    
-	    # @  title_array.push[p.title]
+	    #for each b in line_items
+	    #   if b.title = a.title    
+	    # @  title_array.push[b.title]
 	    #   end
 	    #end
-	  end  
+	  end
+=end	    
   end	
 
 
