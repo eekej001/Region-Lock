@@ -253,14 +253,14 @@ class ProxyController < ApplicationController
 	  #   (some customers might accidentally attempt to buy the same title twice)
       
       
-begin
+
 	  for c in title_array do 
 	  	exist_check = Order.where(:first_name => "#{fn}", :last_name => "#{ln}", :email => "#{email}", :title => c)
 	  	if exist_check.nil?
 	  	   Order.create(:first_name => "#{fn}", :last_name => "#{ln}", :email => "#{email}", :title => c)
 	  	end   
 	  end  
-end
+
   end	
 
 
