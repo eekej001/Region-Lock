@@ -236,7 +236,7 @@ class ProxyController < ApplicationController
 	  
 	  #for a in @douj_titles do  
 	    for b in line_items do
-	    	puts b
+	    	puts b["title"]
 	       # if b[0].title == a["title"]    
 	        #  title_array.push[b[0].title]
              
