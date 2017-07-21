@@ -236,9 +236,9 @@ class ProxyController < ApplicationController
 	  
 	  for a in @douj_titles do  
 	    for b in line_items do
-	        if b[0].title == a["title"]    
-	          title_array.push[b[0].title]
-
+	       # if b[0].title == a["title"]    
+	        #  title_array.push[b[0].title]
+             
 	        #if b["title"] == a["title"]    
 	         # title_array.push[b["title"]]
 	       end
@@ -250,13 +250,14 @@ class ProxyController < ApplicationController
 	  #   (some customers might accidentally attempt to buy the same title twice)
       
       
-
+=begin
 	  for c in title_array do 
 	  	exist_check = Order.where(:first_name => "#{fn}", :last_name => "#{ln}", :email => "#{email}", :title => c)
 	  	if exist_check.nil?
 	  	   Order.create(:first_name => "#{fn}", :last_name => "#{ln}", :email => "#{email}", :title => c)
 	  	end   
 	  end  
+=end
   end	
 
 
