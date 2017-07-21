@@ -234,7 +234,7 @@ class ProxyController < ApplicationController
      email = webhook_json["email"]
      line_items = webhook_json["line_items"]
 	  
-	  for a in douj_titles do  
+	  for a in @douj_titles do  
 	    for  b in line_items do
 	       if b["title"] = a["title"]    
 	         title_array.push[b["title"]]
