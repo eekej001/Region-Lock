@@ -80,5 +80,5 @@ private
     end
 
     def douj_params
-      params.require(:doujinshi).permit(:title, :handle)
+      params.require(:doujinshi).permit(:title)
     end

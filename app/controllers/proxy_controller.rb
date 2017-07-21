@@ -224,20 +224,36 @@ class ProxyController < ApplicationController
   	Form.create(:first_name => "#{fn}", :last_name => "#{ln}")
 =end
 
-=begin
+
      @douj_titles = Doujinshi.all
      title_array = []
     
-
-     #line_items = webhook_json["line_items"]
-	  for each a in douj_titles  
-	    #for each b in line_items
-	    #   if b.title = a.title    
-	    # @  title_array.push[b.title]
-	    #   end
-	    #end
+     webhook_json = JSON.parse request.body.read
+     fn = webhook_json["billing_address"]["first_name"]
+  	 ln = webhook_json["billing_address"]["last_name"]
+     email = webhook_json["email"]
+     line_items = webhook_json["line_items"]
+	  
+	  for a in douj_titles do  
+	    for  b in line_items do
+	       if b["title"] = a["title"]    
+	         title_array.push[b["title"]]
+	       end
+	    end
 	  end
-=end	    
+
+	  #Create entry for each title_array
+	  #put in if statement to stop Order creation if the order alreadt exists
+	  #   (some customers might accidentally attempt to buy the same title twice)
+      
+      
+
+	  for c in title_array do 
+	  	exist_check = Order.where(:first_name => "#{fn}", :last_name => "#{ln}", :email => "#{email}", :title => c)
+	  	if exist_check.nil?
+	  	   Order.create(:first_name => "#{fn}", :last_name => "#{ln}", :email => "#{email}", :title => c)
+	  	end   
+	  end  
   end	
 
 
