@@ -235,15 +235,16 @@ class ProxyController < ApplicationController
      line_items = webhook_json["line_items"]
 	  
 	  for a in @douj_titles do
-	   puts a["title"]  
-	    #for b in line_items do
+	   #puts a["title"]  
+	    for b in line_items do
 	    	#puts b["title"]
 	       # if b[0].title == a["title"]    
 	        #  title_array.push[b[0].title]
              
-	        #if b["title"] == a["title"]    
-	         # title_array.push[b["title"]]
-	       #end
+	        if b["title"] == a["title"]    
+	          puts "Match!"
+	          #title_array.push[b["title"]]
+	       end
 	    #end
 	  end
 
