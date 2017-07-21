@@ -234,17 +234,18 @@ class ProxyController < ApplicationController
      email = webhook_json["email"]
      line_items = webhook_json["line_items"]
 	  
-	  #for a in @douj_titles do  
-	    for b in line_items do
-	    	puts b["title"]
+	  for a in @douj_titles do
+	   puts a[title]  
+	    #for b in line_items do
+	    	#puts b["title"]
 	       # if b[0].title == a["title"]    
 	        #  title_array.push[b[0].title]
              
 	        #if b["title"] == a["title"]    
 	         # title_array.push[b["title"]]
 	       #end
-	    end
-	  #end
+	    #end
+	  end
 
 	  #Create entry for each title_array
 	  #put in if statement to stop Order creation if the order alreadt exists
