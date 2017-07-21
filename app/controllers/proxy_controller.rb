@@ -242,7 +242,7 @@ class ProxyController < ApplicationController
 	        #  title_array.push[b[0].title]
              
 	        if b["title"] == a["title"]    
-	          puts "Match!"
+	          puts "Match: " + b["title"]
 	          #title_array.push[b["title"]]
 	       end
 	    end
