@@ -245,7 +245,7 @@ class ProxyController < ApplicationController
 	          puts "Match!"
 	          #title_array.push[b["title"]]
 	       end
-	    #end
+	    end
 	  end
 
 	  #Create entry for each title_array
