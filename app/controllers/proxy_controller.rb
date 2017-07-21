@@ -241,7 +241,7 @@ class ProxyController < ApplicationController
              
 	        #if b["title"] == a["title"]    
 	         # title_array.push[b["title"]]
-	       end
+	       #end
 	    end
 	  end
 
