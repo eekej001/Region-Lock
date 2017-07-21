@@ -247,7 +247,8 @@ class ProxyController < ApplicationController
 	       end
 	    end
 	  end
-
+      
+      puts "Title Array: " + title_array[1]
 	  #Create entry for each title_array
 	  #put in if statement to stop Order creation if the order alreadt exists
 	  #   (some customers might accidentally attempt to buy the same title twice)
@@ -255,12 +256,13 @@ class ProxyController < ApplicationController
       
 
 	  for c in title_array do 
+	  	puts "Starting Order History Check"
 	  	exist_check = Order.where(:first_name => "#{fn}", :last_name => "#{ln}", :email => "#{email}", :title => c)
 	  	if exist_check.nil?
 	  	   Order.create(:first_name => "#{fn}", :last_name => "#{ln}", :email => "#{email}", :title => c)
 	  	end   
 	  end  
-
+       puts "Ending Order History Check"
   end	
 
 
