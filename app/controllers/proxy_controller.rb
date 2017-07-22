@@ -271,7 +271,10 @@ class ProxyController < ApplicationController
            puts exist_check2
 	  	   puts "Order exists so order was not created."
 	  	   puts Order.where(:first_name => "#{fn}", :last_name => "#{ln}", :email => "#{email}", :title => c) 
-	  	     
+	  	     puts "All: "
+             for e in Order.all do
+	  	       puts e
+	  	     end
 	  	else
 	  	  puts "Order does not exist. Time to create."
 	  	   Order.create(:first_name => "#{fn}", :last_name => "#{ln}", :email => "#{email}", :title => c)
