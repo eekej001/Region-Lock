@@ -263,18 +263,19 @@ class ProxyController < ApplicationController
 
 	  for c in title_array do 
 	  	puts "Starting Order History Check"
-	  	exist_check = Order.where(:first_name => "#{fn}", :last_name => "#{ln}", :email => "#{email}", :title => c).first
-	  	exist_check2 = exist_check["first_name"]
+	  	#exist_check = Order.where(:first_name => "#{fn}", :last_name => "#{ln}", :email => "#{email}", :title => c).first
+	  	#exist_check2 = exist_check["first_name"]
 	  	#if Order.where(:first_name => "#{fn}", :last_name => "#{ln}", :email => "#{email}", :title => c).first
+	  	if Order.exists?(:first_name => "#{fn}", :last_name => "#{ln}", :email => "#{email}", :title => c)
 	  	#if exist_check.persisted?
-        if exist_check2
-           puts exist_check2
+        #if exist_check2
+         #  puts exist_check2
 	  	   puts "Order exists so order was not created."
-	  	   puts Order.where(:first_name => "#{fn}", :last_name => "#{ln}", :email => "#{email}", :title => c) 
-	  	     puts "All: "
-             for e in Order.all do
-	  	       puts e
-	  	     end
+	  	   #puts Order.where(:first_name => "#{fn}", :last_name => "#{ln}", :email => "#{email}", :title => c) 
+	  	    # puts "All: "
+            # for e in Order.all do
+	  	     #  puts e
+	  	   #  end
 	  	else
 	  	  puts "Order does not exist. Time to create."
 	  	   Order.create(:first_name => "#{fn}", :last_name => "#{ln}", :email => "#{email}", :title => c)
