@@ -248,7 +248,7 @@ class ProxyController < ApplicationController
 	    end
 	  end
       
-      puts "Title Array: " + title_array[1]
+      puts "Title Array: " + title_array
 	  #Create entry for each title_array
 	  #put in if statement to stop Order creation if the order alreadt exists
 	  #   (some customers might accidentally attempt to buy the same title twice)
