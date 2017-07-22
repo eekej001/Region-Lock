@@ -248,7 +248,13 @@ class ProxyController < ApplicationController
 	    end
 	  end
       
-      puts "Title Array: " + title_array
+
+      puts "Begin Title Array Output"
+      for d in title_array do
+      	puts d
+      end	
+
+      puts "End Title Array Output"
 	  #Create entry for each title_array
 	  #put in if statement to stop Order creation if the order alreadt exists
 	  #   (some customers might accidentally attempt to buy the same title twice)
