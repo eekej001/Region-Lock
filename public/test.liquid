@@ -22,8 +22,10 @@ This is the proxy page for {{ shop.name }}. </br>
 
     $('.productSection').hide();
    // $('img').on('dragstart', function(event) { event.preventDefault(); });
+
+   var custE = document.getElementById("custE").innerHTML;
     var formData = new FormData();
-    formData.append('username', 'Test');
+    formData.append('user', custE);
     //var formData = {'username': $('input[name=IT3]').val()};
     //var formData = {'username': 'IT3'};
 
@@ -59,24 +61,25 @@ This is the proxy page for {{ shop.name }}. </br>
            for(i=0; i<data.length; i++) {
            //console.log("Data Length: " + data.length);
 
-             var ln = data[i].last_name;
-             var allP = $('p.tempMarker');
+             //var ln = data[i].last_name;     //PREVIOUS WORKING CODE
+             var c-email = data[i].email;
+             //var allP = $('p.tempMarker');   //PREVIOUS WORKING CODE
+             var allT = $('p.pTitle'); 
              //console.log("Ajax Last Name: " + data[i].last_name);
 
                //console.log("Temp Marker P Length: " + data.length);
-               for(m=0; m<allP.length; m++) {
-                 var markN = $('p.tempMarker')[m].innerHTML;
+              // for(m=0; m<allP.length; m++) {       //PREVIOUS WORKING CODE
+                 for(m=0; m<allT.length; m++) {  
+              //   var markN = $('p.tempMarker')[m].innerHTML;  //PREVIOUS WORKING CODE
+              var markN = $('p.pTitle')[m].innerHTML;
                  //console.log("Inner Html Marker Number: " + markN);
 
-            /*      if (allP[m].innerHTML == ln) {
-                     allP[m].parent().css( "background-color", "red" );
-                     //console.log("Marker Match" + markN);
-                  };
              
-            */ 
 
-                    if ($('p.tempMarker')[m].innerHTML == ln) {
-                    var thisP = $('p.tempMarker')[m];
+                  //  if ($('p.tempMarker')[m].innerHTML == ln) {  //PREVIOUS WORKING CODE
+                    if ($('p.pTitle')[m].innerHTML == c-email) {  
+                  //  var thisP = $('p.tempMarker')[m]; //PREVIOUS WORKING CODE
+                    var thisP = $('p.pTitle')[m];
                     // $(thisP).parent().css( "background-color", "red" );
                     $(thisP).parent().show();
                     $(thisP).parent().addClass('ordered');
@@ -91,20 +94,7 @@ This is the proxy page for {{ shop.name }}. </br>
                  
             };  
 
-
-
-           /* var allD = $('div.productSection');
-
-               for(n=0; n<allD.length; n++) {
-                  var thisD = $('div.productSection')[n];
-                  if (!$(thisD).hasClass('ordered')) {
-                    $(thisD).remove();
-                   //$(thisD).css( "background-color", "red" );
-                  };
-                }; 
-          */
-
-         
+  
 
          var pOrder = $('div.ordered');
       //alert(pOrder.length);

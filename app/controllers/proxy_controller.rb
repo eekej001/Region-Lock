@@ -25,12 +25,15 @@ class ProxyController < ApplicationController
 
 
   def query
+=begin WORKING TEST CODE 	
     fname = params[:username]
-    #@matchup = Form.where(:first_name => fname).first
     @matchup = Form.where(:first_name => fname)
-    #@matchup = Form.where(:first_name => '#{fname}').first
     render :json => @matchup
+=end
 
+    email = params[:user]
+    @matchup = Order.where(:email => email)
+    render :json => @matchup
 
 
     #### MANUAL JSON TEXT SEND  #####   
