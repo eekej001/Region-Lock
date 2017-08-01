@@ -12,30 +12,19 @@ This is the proxy page for {{ shop.name }}. </br>
    // alert('This is before the jQuery');
     $(document).ready(function() {
     //alert('This is the beginning');
-
     
-
-
    window.ondragstart = function() { return false; } 
-
-
-
     $('.productSection').hide();
    // $('img').on('dragstart', function(event) { event.preventDefault(); });
-
-   var custE = document.getElementById("custE").innerHTML;
     var formData = new FormData();
-    formData.append('user', custE);
+    formData.append('username', 'Test');
     //var formData = {'username': $('input[name=IT3]').val()};
     //var formData = {'username': 'IT3'};
-
-
     var spinner = {
         spinBox: $('<div />', { class: 'spinner'}),
         //container: $('#appContent')
         container: $('#spinnerCatch')
     }
-
       $.ajax({
           type: 'POST',
           url: 'https://region-lock.herokuapp.com/proxy/query', 
@@ -57,45 +46,43 @@ This is the proxy page for {{ shop.name }}. </br>
           
            //document.getElementById("responseContainer").innerHTML = data[3].last_name;
            //document.getElementById("liquidResponseContainer").innerHTML = 'hey';
-
            for(i=0; i<data.length; i++) {
            //console.log("Data Length: " + data.length);
-
-             //var ln = data[i].last_name;     //PREVIOUS WORKING CODE
-             var c-email = data[i].email;
-             //var allP = $('p.tempMarker');   //PREVIOUS WORKING CODE
-             var allT = $('p.pTitle'); 
+             var ln = data[i].last_name;
+             var allP = $('p.tempMarker');
              //console.log("Ajax Last Name: " + data[i].last_name);
-
                //console.log("Temp Marker P Length: " + data.length);
-              // for(m=0; m<allP.length; m++) {       //PREVIOUS WORKING CODE
-                 for(m=0; m<allT.length; m++) {  
-              //   var markN = $('p.tempMarker')[m].innerHTML;  //PREVIOUS WORKING CODE
-              var markN = $('p.pTitle')[m].innerHTML;
+               for(m=0; m<allP.length; m++) {
+                 var markN = $('p.tempMarker')[m].innerHTML;
                  //console.log("Inner Html Marker Number: " + markN);
-
+            /*      if (allP[m].innerHTML == ln) {
+                     allP[m].parent().css( "background-color", "red" );
+                     //console.log("Marker Match" + markN);
+                  };
              
-
-                  //  if ($('p.tempMarker')[m].innerHTML == ln) {  //PREVIOUS WORKING CODE
-                    if ($('p.pTitle')[m].innerHTML == c-email) {  
-                  //  var thisP = $('p.tempMarker')[m]; //PREVIOUS WORKING CODE
-                    var thisP = $('p.pTitle')[m];
+            */ 
+                    if ($('p.tempMarker')[m].innerHTML == ln) {
+                    var thisP = $('p.tempMarker')[m];
                     // $(thisP).parent().css( "background-color", "red" );
                     $(thisP).parent().show();
                     $(thisP).parent().addClass('ordered');
                     //alert("Has class " + m);
                      //console.log("Marker Match" + markN);
                   };
-
             
-
                };
-
                  
             };  
-
-  
-
+           /* var allD = $('div.productSection');
+               for(n=0; n<allD.length; n++) {
+                  var thisD = $('div.productSection')[n];
+                  if (!$(thisD).hasClass('ordered')) {
+                    $(thisD).remove();
+                   //$(thisD).css( "background-color", "red" );
+                  };
+                }; 
+          */
+         
          var pOrder = $('div.ordered');
       //alert(pOrder.length);
         for(o=0; o< pOrder.length; o++) {
@@ -103,15 +90,10 @@ This is the proxy page for {{ shop.name }}. </br>
             $(pOrderI).removeClass('no-view');
             //$(pOrderI).parent().css('width', '75px');
         };
-
        // alert('finished displaying ordered');
-
       //$('.ordered').removeClass('no-view');
       $('.ordered').css( "display", "inline-block" );
      // $('.productSection').css( "background-color", "red" );
-
-
-
      	  $('div.no-view').remove();
           // var nvD = $('div.no-view');
            //var nvDL = nvD.length;
@@ -125,24 +107,16 @@ This is the proxy page for {{ shop.name }}. </br>
                };
   */               
          //   }, 5000);
-
       }).error(function(errorData){
          //alert("It didn't work");
         spinner.container.find(spinner.spinBox).remove();
       	document.getElementById("responseContainer").innerHTML = "Something went wrong. Don't worry, we're working on it!";
-
         //Something went wrong with the ajax call. It'll be dealt with here
       });
-
-
-
-
-
   /* $.get("https://region-lock.herokuapp.com/proxy/image_test", function(data, status){
         $("#dog").attr("src","data:image/jpg;base64," + data);
     });
   */
-
      
   //This is the working version but I'm going to try out using Blob'
 /*
@@ -158,14 +132,10 @@ This is the proxy page for {{ shop.name }}. </br>
             console.log(status);
             console.log(error);
            
-
       }).error(function(errorData){
         alert("It didn't work");
       });
-
 */
-
-
 /*
     var dImage = $('#catchDog');
     var dImage = new Image;
@@ -180,12 +150,7 @@ This is the proxy page for {{ shop.name }}. </br>
 	request.open("GET", "https://region-lock.herokuapp.com/proxy/image_test");
 	request.send();
 */
-
-
-
-
 /*  POST METHOD ATTEMPT AT RETRIEVING PICTURE
-
       $.ajax({
           type: 'POST',
           url: 'https://region-lock.herokuapp.com/proxy/image_test', 
@@ -200,22 +165,13 @@ This is the proxy page for {{ shop.name }}. </br>
             console.log(status);
             console.log(error);
            
-
       }).error(function(errorData){
         alert('no such luck');
       
       	document.getElementById("responseContainer").innerHTML = "Something went wrong. Don't worry, we're working on it!";
       });
-
-
 */
-
-
-
-
-
   $('.roBut').click( function (event) {
-
     //var replaceContainer = $('#appContent');
     var nImage = new Image;
 	var request = new XMLHttpRequest();
@@ -227,7 +183,6 @@ This is the proxy page for {{ shop.name }}. </br>
 	request.onload = function() {
       //$('#appContent').empty();
       $('body').empty();
-
       var backB = document.createElement('a');
       var backBtext = document.createTextNode('Back to Library');
       backB.appendChild(backBtext);
@@ -236,7 +191,6 @@ This is the proxy page for {{ shop.name }}. </br>
       backB.setAttribute('class', 'backB');
       document.body.appendChild(backB);
       $('.backB').css({"color": "red", "font-size": "14px", "font-family": "Open Sans" });
-
    
     $(function () {
       $('<script>')
@@ -246,8 +200,6 @@ This is the proxy page for {{ shop.name }}. </br>
       //.text("alert('Hi')")
       .appendTo('head');
    })
-
-
          
       
     var spinnerS = {
@@ -256,10 +208,7 @@ This is the proxy page for {{ shop.name }}. </br>
     }
     spinnerS.container.append(spinnerS.spinBox);
     $('.spinnerS').css({"background-image": "url('http://i1269.photobucket.com/albums/jj591/aditya9172/loaing2.gif')", "background-repeat": "no-repeat", "background-position": "50%", "position": "absolute", "left": "35%", "width": "30%", "height": "30%"});
-
-
       $('body').css({"background-color": "black", "margin-left": "4%"});
-
       document.addEventListener('contextmenu', event => event.preventDefault());
       console.log(this.response);
       var counter = this.response;
@@ -271,7 +220,6 @@ This is the proxy page for {{ shop.name }}. </br>
       //response = this.response.toJSON();
        
       // alert('Response Length = ' + tempRulerL);
-
       /*  for(i=0; i<2; i++) {
 		  //nImage.src = URL.createObjectURL(this.response.[i]);
 		  //alert(this.response[0]);
@@ -280,36 +228,21 @@ This is the proxy page for {{ shop.name }}. </br>
 		  console.log(this.response.i);
 		  document.getElementById("appContent").innerHTML(this.response[0]);
 	    };
-
      */
-
     /*  for(i=0; i<2; i++) {
           console.log(response[i]);
 		  nImage.src = URL.createObjectURL(response[i]);
 		  document.getElementById("appContent").appendChild(nImage);
 	    };
-
 	*/    
-
      /* for(i=0; i<tempRulerL; i++) {
 		  nImage.src = URL.createObjectURL(this.response[i]);
 		  document.getElementById("appContent").appendChild(nImage);
 	    };
-
 	 */ 
-
-
-
-
-
-
-
-
     //alert("Counter: " + counter);
     //var D = document.createElement("DIV");
     //$("#appContent").append(D);
-
-
 	var i = 0;
 	  
 	  function iStream () {
@@ -327,7 +260,6 @@ This is the proxy page for {{ shop.name }}. </br>
 		   spinnerS.container.find(spinnerS.spinBox).remove();
 		}
           nImage.src = URL.createObjectURL(this.response);
-
           nImage.onload = function () {
           //alert("Height: " + this.height);
           //alert("Width: " + this.width);	
@@ -337,20 +269,13 @@ This is the proxy page for {{ shop.name }}. </br>
           nImage.width = iWidth;
           nImage.height = iWidth * nRatio;
           
-
           }
-
           
           //nImage.width = iWidth;
           //$("#appContent").append(nImage);
           $("body").append(nImage);	
           
-
-
-
-
           i++;	
-
           if(i > 0 && i < counter) {
 		   iStream();
 	      }	  
@@ -361,32 +286,14 @@ This is the proxy page for {{ shop.name }}. </br>
 	 }
 	
 	  iStream();
-
-
 	}
-
-
 	//request.open("GET", "https://region-lock.herokuapp.com/proxy/dropbox");
 	request.open("GET", "https://region-lock.herokuapp.com/proxy/dropbox_count");
 	request.send();
-
 	
-
   });
-
-
-
-
-
-
-
-
-
-
-
       
   });
-
   
   
 </script>
@@ -467,11 +374,9 @@ List of products in the store: </br></br>
      position: relative;
      left: 25%;
    }
-
    .dImage {
      position: relative;
    }
-
    .dboxOverlay {
      position: absolute;
      top: 0;
@@ -481,41 +386,32 @@ List of products in the store: </br></br>
      background-color: black;
      opacity: 0.4;
    }
-
    .dboxOverlay:hover {
      opacity: 0;
    }
-
    .tempMarker {
      display: none;
    }
-
    .pHandle {
      display:none;
    }
-
    .pTitle {
      width: 170px;
      font-weight: bold;
      text-align: center;
      margin-top: -20%;
      margin-bottom: -13%;
-
    }
-
    .pImage {
      width: 170px;
      height: 240px;
    }
-
    <!--.pImage:hover {
      opacity: 0.7;
    }   -->
-
    .ordered {
      margin-right: 1%;
    }
-
    .roBut {
      background-color: white; 
      color: black; 
@@ -525,20 +421,16 @@ List of products in the store: </br></br>
      text-align: center;
      width: 170px;  
    }
-
    .roBut:hover {
      background-color: #f44336;
      color: white;
    }
-
    .no-view {
      display: none;
    }
-
    #appcontent {
      position: relative;
    }
-
    .spinner {
      position: absolute;
      top: -4%;
@@ -549,12 +441,7 @@ List of products in the store: </br></br>
      background: url('http://i1269.photobucket.com/albums/jj591/aditya9172/loaing2.gif') no-repeat 50%;
    
    }
-
    .backB {
      font-color: red;
    }
-
-
-</style>   
-
-
+</style>
