@@ -98,9 +98,18 @@ This is the proxy page for {{ shop.name }}. </br>
                      //console.log("Marker Match" + markN);
                   };
              
-            */ 
+            */
+
+                   var is_douj = false;
+
+                   for (z=0, z < douj_array.length; z++) {
+                      if $('p.pTitle')[m].innerHTML == douj_array(z) {
+                          is_douj = true;
+                      }
+
+                   } 
                    // if ($('p.tempMarker')[m].innerHTML == ln) {
-                   if ($('p.pTitle')[m].innerHTML == title_purch) {  
+                   if ($('p.pTitle')[m].innerHTML == title_purch  && is_douj) {  
                    // var thisP = $('p.tempMarker')[m];
                    var thisP = $('p.pTitle')[m];
                     // $(thisP).parent().css( "background-color", "red" );
