@@ -303,6 +303,33 @@ This is the proxy page for {{ shop.name }}. </br>
 	request.send();
 	
   });
+
+         $.ajax({
+          type: 'GET',
+          url: 'https://region-lock.herokuapp.com/proxy/doujinshi_list'  
+          data: formData, 
+          dataType: 'json',
+          processData: false,
+		  contentType: false,
+          encode: true
+
+        }).done(function(data, status, error){ 
+            console.log(data);
+            console.log(status);
+            console.log(error);
+            for(i=0; i<data.length; i++) {
+              alert(data[i]);
+            }
+           
+      }).error(function(errorData){
+        alert("It didn't work");
+      });
+
+
+
+
+
+
       
   });
   

@@ -68,6 +68,14 @@ class ProxyController < ApplicationController
 
   end
 
+
+  def doujinshi_list
+  	dl = Doujinshi.all
+  	douj_array = []
+    dl.each { |title| douj_array.push(title['title'])}
+    render :json => douj_array
+  end
+
   def dropbox_count
     require 'dropbox_sdk'
     client = DropboxClient.new(DROPBOX_ACCESS_TOKEN) 
