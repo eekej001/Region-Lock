@@ -49,10 +49,11 @@ This is the proxy page for {{ shop.name }}. </br>
            //document.getElementById("responseContainer").innerHTML = data[3].last_name;
            //document.getElementById("liquidResponseContainer").innerHTML = 'hey';
            for(i=0; i<data.length; i++) {
-           alert(data[i].email);
+           alert("Customer Email: " + custE + " Data Email: " + custEdata[i].email);
            //console.log("Data Length: " + data.length);
              //var ln = data[i].last_name;
-              var c_email = data[i].email;
+             // var c_email = data[i].email;
+              var title_purch = data[i].title;
              //var allP = $('p.tempMarker');
              var allT = $('p.pTitle');
              //console.log("Ajax Last Name: " + data[i].last_name);
@@ -69,7 +70,7 @@ This is the proxy page for {{ shop.name }}. </br>
              
             */ 
                    // if ($('p.tempMarker')[m].innerHTML == ln) {
-                   if ($('p.pTitle')[m].innerHTML == c_email) {  
+                   if ($('p.pTitle')[m].innerHTML == title_purch) {  
                    // var thisP = $('p.tempMarker')[m];
                    var thisP = $('p.pTitle')[m];
                     // $(thisP).parent().css( "background-color", "red" );
