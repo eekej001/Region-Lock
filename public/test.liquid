@@ -16,8 +16,10 @@ This is the proxy page for {{ shop.name }}. </br>
    window.ondragstart = function() { return false; } 
     $('.productSection').hide();
    // $('img').on('dragstart', function(event) { event.preventDefault(); });
+    var custE = document.getElementById("custE").innerHTML;
     var formData = new FormData();
-    formData.append('username', 'Test');
+    formData.append('user', custE);
+   // formData.append('username', 'Test');
     //var formData = {'username': $('input[name=IT3]').val()};
     //var formData = {'username': 'IT3'};
     var spinner = {
@@ -48,12 +50,16 @@ This is the proxy page for {{ shop.name }}. </br>
            //document.getElementById("liquidResponseContainer").innerHTML = 'hey';
            for(i=0; i<data.length; i++) {
            //console.log("Data Length: " + data.length);
-             var ln = data[i].last_name;
-             var allP = $('p.tempMarker');
+             //var ln = data[i].last_name;
+              var c-email = data[i].email;
+             //var allP = $('p.tempMarker');
+             var allT = $('p.pTitle');
              //console.log("Ajax Last Name: " + data[i].last_name);
                //console.log("Temp Marker P Length: " + data.length);
-               for(m=0; m<allP.length; m++) {
-                 var markN = $('p.tempMarker')[m].innerHTML;
+               //for(m=0; m<allP.length; m++) {
+               for(m=0; m<allT.length; m++) {  
+               //  var markN = $('p.tempMarker')[m].innerHTML;
+               var markN = $('p.pTitle')[m].innerHTML;
                  //console.log("Inner Html Marker Number: " + markN);
             /*      if (allP[m].innerHTML == ln) {
                      allP[m].parent().css( "background-color", "red" );
@@ -61,8 +67,10 @@ This is the proxy page for {{ shop.name }}. </br>
                   };
              
             */ 
-                    if ($('p.tempMarker')[m].innerHTML == ln) {
-                    var thisP = $('p.tempMarker')[m];
+                   // if ($('p.tempMarker')[m].innerHTML == ln) {
+                   if ($('p.pTitle')[m].innerHTML == c-email) {  
+                   // var thisP = $('p.tempMarker')[m];
+                   var thisP = $('p.pTitle')[m];
                     // $(thisP).parent().css( "background-color", "red" );
                     $(thisP).parent().show();
                     $(thisP).parent().addClass('ordered');
