@@ -27,6 +27,34 @@ This is the proxy page for {{ shop.name }}. </br>
         //container: $('#appContent')
         container: $('#spinnerCatch')
     }
+
+      
+     var douj_array;
+     
+
+     $.ajax({
+          type: 'POST',
+          url: 'https://region-lock.herokuapp.com/proxy/doujinshi_list',  
+          data: formData, 
+          dataType: 'json',
+          processData: false,
+		  contentType: false,
+          encode: true
+        }).done(function(data, status, error){ 
+            douj_array = data;
+
+            for(i=0; i<douj_array.length; i++) {
+              alert("Index " + i + ": " + douj_array[i]);
+            }
+           
+      }).error(function(errorData){
+        
+      }); 
+
+
+
+
+
       $.ajax({
           type: 'POST',
           url: 'https://region-lock.herokuapp.com/proxy/query', 
@@ -303,9 +331,9 @@ This is the proxy page for {{ shop.name }}. </br>
 	request.send();
 	
   });
-
+       /* DELETE AFTER EVERYTHING IS WORKING WITH DOUJINSHI_LIST ACTION////////////////////////////////////////////////////////////
          $.ajax({
-          type: 'GET',
+          type: 'POST',
           url: 'https://region-lock.herokuapp.com/proxy/doujinshi_list',  
           data: formData, 
           dataType: 'json',
@@ -325,7 +353,7 @@ This is the proxy page for {{ shop.name }}. </br>
       });
 
 
-
+     */
 
 
 
