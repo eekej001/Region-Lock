@@ -1,0 +1,7 @@
+<h1>Doujinshi Titles</h1>
+
+<ul>
+  <% @doujinshis.each do |doujinshi| %>
+    <li><%= doujinshi.title %><span><%= link_to("Edit", {:action => 'edit_douj', :id => doujinshi.id}, :class => 'action edit') %></span></li>
+  <% end %>
+</ul>

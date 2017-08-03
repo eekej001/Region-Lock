@@ -25,6 +25,11 @@ class HomeController < ShopifyApp::AuthenticatedController
       flash[:notice] = "Form save unsuccessful."
       redirect_to(:action => 'index')   
     end  
+
+    
+    def customers
+      @orders = Order.all
+    end   
     
 
 
