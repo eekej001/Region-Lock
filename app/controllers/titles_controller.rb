@@ -4,6 +4,19 @@ class TitlesController < ApplicationController
       @doujinshis = Doujinshi.all
  end
 
+
+ def create
+    @douj = Doujinshi.new(douj_params)
+    if @douj.save
+      flash[:notice] = "Doujinshi Title Added"
+      redirect_to(:action => 'index')
+    else
+      flash[:notice] = "Doujinshi Title Was Not Added"
+      redirect_to(:action => 'index')   
+    end  
+
+  end
+
  def edit
     @doujinshi = Doujinshi.find(params[:id])
  end
