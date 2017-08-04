@@ -2,6 +2,34 @@
 
 <ul>
   <% @doujinshis.each do |doujinshi| %>
-    <li><%= doujinshi.title %><span><%= link_to("Edit", {:action => 'edit_douj', :id => doujinshi.id}, :class => 'action edit') %></span></li>
+  <table>
+    <tr>
+      <th>Title</th>
+    </tr>
+    <tr>
+    <td><%= doujinshi.title %></td>
+    <td><%= link_to("Edit", {:action => 'edit', :id => doujinshi.id}, :class => 'action edit') %></td>
+    </tr>
+  </table>
   <% end %>
 </ul>
+
+
+
+
+<h2>Add a Doujinshi Title</h2>
+
+<div>
+  <%= form_for(:doujinshi, :url => {:action => 'd_create'}) do |f| %>
+  <table>
+    <tr>
+      <td><%= f.label(:title, "Title") %></td>
+      <td><%= f.text_field(:title) %></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td><%= submit_tag("Submit") %></td>
+    </tr>
+  </table>
+  <% end %> 
+</div>
