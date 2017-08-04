@@ -1,17 +1,19 @@
 <h1>Doujinshi Titles</h1>
 
 <ul>
-  <% @doujinshis.each do |doujinshi| %>
+  
   <table>
     <tr>
       <th>Title</th>
     </tr>
+    <% @doujinshis.each do |doujinshi| %>
     <tr>
     <td><%= doujinshi.title %></td>
     <td><%= link_to("Edit", {:action => 'edit', :id => doujinshi.id}, :class => 'action edit') %></td>
     </tr>
+    <% end %>
   </table>
-  <% end %>
+
 </ul>
 
 
