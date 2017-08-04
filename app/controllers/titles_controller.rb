@@ -1,7 +1,7 @@
 class TitlesController < ApplicationController
 
  def index
-      @doujinshis = Doujinshi.all
+      @doujinshis = Doujinshi.sorted
  end
 
 
