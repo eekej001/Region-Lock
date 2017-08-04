@@ -5,7 +5,7 @@ class TitlesController < ApplicationController
  end
 
  def edit
-    #@doujinshi = Doujinshi.find(params[:id])
+    @doujinshi = Doujinshi.find(params[:id])
  end
 
 
