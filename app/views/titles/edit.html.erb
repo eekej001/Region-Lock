@@ -2,3 +2,14 @@
 <p>What are you looking for here?</p>
 
 
+<div class="titles edit">
+  <h2>Update Doujinishi Title</h2>
+
+  <%= form_for(:doujinshi, :url => {:action => 'update', :id => @doujinshi.id}) do |f| %>
+
+    
+    <div class="form-buttons">
+      <%= submit_tag("Update Title") %>
+    </div>
+  <% end %>
+</div>   
