@@ -10,14 +10,16 @@
     <tr>
     <td><%= doujinshi.title %></td>
     <td><%= link_to("Edit", {:action => 'edit', :id => doujinshi.id}, :class => 'action edit') %></td>
+    <td><%= link_to("Delete", {:action => 'delete', :id => doujinshi.id}, :class => 'action delete') %></td>
     </tr>
     <% end %>
   </table>
 
 </ul>
 
-
-
+</br>
+</br>
+</br>
 
 <h2>Add a Doujinshi Title</h2>
 

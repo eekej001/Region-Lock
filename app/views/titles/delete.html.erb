@@ -1,0 +1,15 @@
+<%= link_to("<< Back to Title List", {:action => 'index'}, :class => 'back-link') %>
+
+<div class="titles delete">
+  <h2>Delete Title</h2>
+
+  <%= form_for(:doujinshi, :url => {:action => 'destroy', :id => @doujinshi.id}) do |f| %>
+
+    <p>Are you sure you want to permanently delete this title?</p>
+    <p class="reference-name"><%= @doujinshi.title %></p>
+    
+    <div class="form-buttons">
+      <%= submit_tag("Delete Title") %>
+    </div>
+  <% end %>
+</div>   
