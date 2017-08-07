@@ -17,7 +17,7 @@ class CustomersController < ApplicationController
       redirect_to(:action => 'index')
     else
       flash[:notice] = "Doujinshi Title Was Not Added to this Customer's Library"
-      redirect_to(:action => 'index')   
+      redirect_to("https://www.google.com")   
     end  
 
   end
