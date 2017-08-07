@@ -2,13 +2,25 @@ class CustomersController < ApplicationController
 
  def index
  	@customers = Order.select(:first_name, :last_name, :email).distinct
-      #@customers = Order.sorted.uniq{|x| x.email }
  end
 
 
  def orders
     @orders = Order.where(email: params[:email])
  end
+
+
+ def create
+    @order = Order.new(order_params)
+    if @order.save
+      flash[:notice] = "Doujinshi Title Added To Library"
+      redirect_to(:action => 'index')
+    else
+      flash[:notice] = "Doujinshi Title Was Not Added to this Customer's Library"
+      redirect_to(:action => 'index')   
+    end  
+
+  end
 
 
 def edit
@@ -39,7 +51,7 @@ def delete
   private 
 
     def order_params
-      params.require(:order).permit(:first_name, :last_name, :email, :title) 
+      params.require(:order).permit(:title) 
     end 
 
 

@@ -1,0 +1,17 @@
+<%= link_to("<< Back to Order List", {:action => 'orders'}, :class => 'back-link') %>
+
+<div class="orders edit">
+  <h2>Modify Order</h2>
+
+  <%= form_for(:order, :url => {:action => 'update', :id => @order.id}) do |f| %>
+		<table summary="Order Form Fields">
+		  <tr>
+		    <th><%= f.label(:title, "Title") %></th>
+		    <td><%= f.text_field(:title) %></td>
+		  </tr>		  
+		</table>
+    <div class="form-buttons">
+      <%= submit_tag("Update Order") %>
+    </div>
+  <% end %>
+</div>   

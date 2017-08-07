@@ -1,5 +1,8 @@
 <h1><%= @orders[0].first_name %> <%= @orders[0].last_name %>'s Orders</h1>
 
+<%= link_to("<< Back to Customer List", {:action => 'index'}, :class => 'back-link') %>
+
+
 <ul>
   
   <table>
@@ -18,3 +21,26 @@
   </table>
 
 </ul>
+
+
+
+
+<h2>Add Doujinshi Title to Customer Library</h2>
+
+<div>
+  <%= form_for(:order, :url => {:action => 'create'}) do |f| %>
+  <table>
+    <tr>
+     <%= hidden_field_tag 'first_name', @orders[0].first_name %>
+     <%= hidden_field_tag 'last_name', @orders[0].last_name %>
+     <%= hidden_field_tag 'email', @orders[0].email %>
+      <td><%= f.label(:title, "Title") %></td>
+      <td><%= f.text_field(:title) %></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td><%= submit_tag("Submit") %></td>
+    </tr>
+  </table>
+  <% end %> 
+</div>
