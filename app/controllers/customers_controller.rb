@@ -7,7 +7,7 @@ class CustomersController < ApplicationController
 
 
  def orders
-    @orders = Order.find(params[:email])
+    @orders = Order.where(email: params[:email])
  end
 
 
