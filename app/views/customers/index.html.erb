@@ -13,6 +13,7 @@
     <td><%= customer.first_name %></td>
     <td><%= customer.last_name %></td>
     <td><%= customer.email %></td>
+    <td><%= link_to("[View Orders]", {:action => 'orders', :email => customer.email}, :class => 'action orders') %></td>
     </tr>
     <% end %>
   </table>
