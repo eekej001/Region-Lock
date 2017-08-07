@@ -14,10 +14,10 @@ class CustomersController < ApplicationController
     @order = Order.new(order_new_params)
     if @order.save
       flash[:notice] = "Doujinshi Title Added To Library"
-      redirect_to(:action => 'index')
+      redirect_to(:action => 'orders', email: params[:email])
     else
       flash[:notice] = "Doujinshi Title Was Not Added to this Customer's Library"
-      redirect_to("https://www.google.com")   
+       redirect_to(:action => 'orders', email: params[:email])  
     end  
 
   end
