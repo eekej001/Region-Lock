@@ -4,17 +4,11 @@
   
   <table>
     <tr>
-      <th>First Name</th>
-      <th>Last Name</th>
-      <th>Email</th>
       <th>Title</th>
       <th>Purchase Date</th>
     </tr>
     <% @orders.each do |order| %>
     <tr>
-    <td><%= order.first_name %></td>
-    <td><%= order.last_name %></td>
-    <td><%= order.email %></td>
     <td><%= order.title %></td>
     <td><%= order.created_at %></td>
     <td><%= link_to("Edit", {:action => 'edit', :id => order.id}, :class => 'action edit') %></td>
