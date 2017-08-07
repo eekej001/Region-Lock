@@ -54,6 +54,10 @@ def delete
       params.require(:order).permit(:title) 
     end 
 
+    def order_new_params
+      params.require(:order).permit(:first_name, :last_name, :email, :title) 
+    end 
+
 
 
 end
