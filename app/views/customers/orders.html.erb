@@ -31,9 +31,9 @@
   <%= form_for(:order, :url => {:action => 'create'}) do |f| %>
   <table>
     <tr>
-     <%= f.hidden_field :first_name %>
-     <%= f.hidden_field :last_name %>
-     <%= f.hidden_field :email %>
+     <%= f.hidden_field :first_name, value: @orders[0].first_name %>
+     <%= f.hidden_field :last_name value: @orders[0].last_name %>
+     <%= f.hidden_field :email  value: @orders[0].email %>
       <td><%= f.label(:title, "Title") %></td>
       <td><%= f.text_field(:title) %></td>
     </tr>
