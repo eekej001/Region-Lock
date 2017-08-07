@@ -11,7 +11,7 @@ class CustomersController < ApplicationController
 
 
  def create
-    @order = Order.new(order_params)
+    @order = Order.new(order_new_params)
     if @order.save
       flash[:notice] = "Doujinshi Title Added To Library"
       redirect_to(:action => 'index')
