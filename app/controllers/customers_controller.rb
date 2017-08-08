@@ -17,7 +17,7 @@ class CustomersController < ApplicationController
       redirect_to(:action => 'orders', email: params[:email])
     else
       flash[:notice] = "Doujinshi Title Was Not Added to this Customer's Library"
-       redirect_to(:action => 'orders', email: params[:email])  
+       redirect_to :action => 'orders', email: params[:email]  
     end  
 
   end
