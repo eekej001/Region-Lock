@@ -46,7 +46,7 @@ def delete
  def destroy
     order = Order.find(params[:id]).destroy
     flash[:notice] = "The order has been successfully deleted."
-    redirect_to(action: 'orders', email: @order.email)
+    redirect_to(action: 'orders', email: order.email)
   end
 
   private 
