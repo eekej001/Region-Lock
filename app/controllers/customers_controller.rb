@@ -18,7 +18,7 @@ class CustomersController < ApplicationController
      # redirect_to(action: 'orders', email: params[:email])
     else
       flash[:notice] = "Doujinshi Title Was Not Added to this Customer's Library"
-      redirect_to(:action => 'index')
+      redirect_to(action: 'orders', email: @order.email)
     end  
 
   end
@@ -33,9 +33,9 @@ def edit
     @order = Order.find(params[:id])
     if @order.update_attributes(order_params)
       flash[:notice] = "Order updated successfully."
-      redirect_to(:action => 'index')
+      redirect_to(action: 'orders', email: @order.email)
     else  
-      render('edit')
+      redirect_to(action: 'orders', email: @order.email)
     end  
   end 
 
@@ -46,7 +46,7 @@ def delete
  def destroy
     order = Order.find(params[:id]).destroy
     flash[:notice] = "The order has been successfully deleted."
-    redirect_to(:action => 'index')
+    redirect_to(action: 'orders', email: @order.email)
   end
 
   private 
