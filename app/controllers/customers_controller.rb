@@ -33,7 +33,7 @@ def edit
     @order = Order.find(params[:id])
     if @order.update_attributes(order_params)
       flash[:notice] = "Order updated successfully."
-      redirect_to(action: 'orders', id: @order.id)
+      redirect_to(action: 'orders', email: @order.email)
     else  
       redirect_to(action: 'orders', id: @order.id)
     end  
@@ -46,7 +46,7 @@ def delete
  def destroy
     order = Order.find(params[:id]).destroy
     flash[:notice] = "The order has been successfully deleted."
-    redirect_to(action: 'orders', id: @order.id)
+    redirect_to(action: 'orders', email: @order.email)
   end
 
   private 
