@@ -8,6 +8,7 @@ class HomeController < ShopifyApp::AuthenticatedController
    		 @products = ShopifyAPI::Product.find(:all, params: { limit: 10 })
        @users = Form.all
        @doujinshis = Doujinshi.all
+       @doujinshi_count = Doujinshi.count - 1
   #	end
      
      #filename = File.join(Rails.root, "/public/signup.html")

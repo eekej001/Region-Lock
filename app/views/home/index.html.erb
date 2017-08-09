@@ -70,7 +70,8 @@
   <table>
     <tr>
       <td><%= f.label(:title, "Title") %></td>
-      <td><%= f.text_field(:title) %></td>
+      <!--<td><%= f.text_field(:title) %></td>  -->
+      <td><%= f.select(:title, @doujinshis[0].title..@doujinshis[@doujinshi_count].title) %></td>
     </tr>
     <tr>
       <td>&nbsp;</td>
