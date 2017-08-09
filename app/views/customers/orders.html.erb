@@ -35,7 +35,7 @@
      <%= f.hidden_field :last_name, value: @orders[0].last_name %>
      <%= f.hidden_field :email,  value: @orders[0].email %>
       <td><%= f.label(:title, "Title") %></td>
-      <td><%= f.text_field(:title) %></td>
+      <td><%= f.select :title, Doujinshi.all.collect {|x| [ x.title ] }, { :include_blank => true } %><td>
     </tr>
     <tr>
       <td>&nbsp;</td>
